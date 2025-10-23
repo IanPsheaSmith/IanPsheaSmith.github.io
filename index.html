@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haiti Aedes aegypti Ecological Niche Modeling</title>
+    <title>Ian A. Pshea-Smith | Medical Geography & Global Health</title>
     <style>
+        /* Black, White, Gold Color Palette */
+        :root {
+            --black: #000000;
+            --charcoal: #1a1a1a;
+            --white: #ffffff;
+            --off-white: #fafafa;
+            --gold: #d4af37;
+            --gold-dark: #b8941f;
+            --gold-light: #e8d090;
+            --gray: #4a4a4a;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,241 +24,293 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #2b2b2b;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-        
-        header {
-            background: linear-gradient(135deg, #0d0887 0%, #7e03a8 50%, #cc4778 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-            font-style: italic;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            min-height: 100vh;
         }
         
         .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
         
-        .content-box {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 4px solid #cc4778;
+        header, .main-content, .links-section, .projects-section {
+            transition: transform 0.1s ease-out;
+            will-change: transform;
         }
         
-        h2 {
-            color: #7e03a8;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 0.5rem;
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding: 3rem 2rem 2.5rem;
+            background: var(--off-white);
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
         }
         
-        h3 {
-            color: #cc4778;
-            margin-bottom: 0.8rem;
-            margin-top: 1.5rem;
-            font-size: 1.3rem;
+        h1 {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+            letter-spacing: 1px;
         }
         
-        .methods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        
-        .method-card {
-            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
-            padding: 1rem;
-            border-radius: 6px;
-            border-left: 3px solid #f89540;
-            transition: transform 0.2s;
-        }
-        
-        .method-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        
-        .method-card strong {
-            color: #7e03a8;
-            display: block;
-            margin-bottom: 0.3rem;
-        }
-        
-        ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        li {
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--gold-dark);
+            font-weight: 400;
             margin-bottom: 0.5rem;
-            color: #4a4a4a;
+            font-style: italic;
         }
         
-        a {
-            color: #cc4778;
+        .tagline {
+            font-size: 1rem;
+            color: var(--gray);
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 300;
+        }
+        
+        .main-content {
+            background: var(--off-white);
+            border-radius: 2px;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
+        }
+        
+        .bio {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: justify;
+            color: var(--gray);
+        }
+        
+        .links-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .link-card {
+            background: var(--white);
+            border-radius: 2px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
+            color: inherit;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
         }
         
-        a:hover {
-            color: #7e03a8;
-            text-decoration: underline;
+        .link-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
         }
         
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #cc4778 0%, #7e03a8 100%);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        .link-card:hover::before {
+            transform: scaleX(1);
         }
         
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+            border-color: var(--gold);
+        }
+        
+        .link-card h3 {
+            color: var(--black);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s ease;
+        }
+        
+        .link-card:hover h3 {
+            color: var(--gold-dark);
+        }
+        
+        .link-card p {
+            color: #666;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .projects-section {
+            background: var(--off-white);
+            border-radius: 2px;
+            padding: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            border-top: 3px solid var(--gold);
+        }
+        
+        .projects-section h2 {
+            color: var(--black);
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        .project-link {
+            display: block;
+            background: var(--white);
+            border-radius: 2px;
+            padding: 2rem;
             text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
         }
         
-        .highlight-box {
-            background: linear-gradient(135deg, #fff5f7 0%, #ffe9f0 100%);
-            border-left: 4px solid #cc4778;
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 4px;
+        .project-link:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+            border-left-color: var(--gold-dark);
+        }
+        
+        .project-link h3 {
+            color: var(--black);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            font-family: 'Segoe UI', sans-serif;
+            transition: color 0.3s ease;
+        }
+        
+        .project-link:hover h3 {
+            color: var(--gold-dark);
+        }
+        
+        .project-link p {
+            color: var(--gray);
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
         
         footer {
             text-align: center;
             padding: 2rem;
             color: #666;
-            font-size: 0.9rem;
-            background: rgba(255,255,255,0.8);
-            margin-top: 2rem;
+            font-size: 0.85rem;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
         }
         
-        code {
-            background: #f5f5f5;
-            padding: 0.2rem 0.4rem;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            color: #7e03a8;
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+            .container {
+                padding: 2rem 1rem;
+            }
+            .main-content, .projects-section {
+                padding: 1.5rem;
+            }
+            .links-section {
+                grid-template-columns: 1fr;
+            }
         }
+        
+        /* Subtle animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container > * {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        header { animation-delay: 0s; }
+        .main-content { animation-delay: 0.1s; }
+        .links-section { animation-delay: 0.2s; }
+        .projects-section { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Ecological Niche Modeling for <em>Aedes aegypti</em></h1>
-        <p>Climate-driven species distribution analysis in Haiti</p>
-    </header>
-    
     <div class="container">
-        <div class="content-box">
-            <h2>About This Project</h2>
-            <p>This repository hosts an ecological niche modeling analysis for <em>Aedes aegypti</em> mosquitoes in Haiti, utilizing ensemble Boosted Regression Tree (BRT) models to understand current species distribution patterns and predict changes under multiple climate warming scenarios.</p>
-            
-            <div class="highlight-box">
-                <strong>Key Focus:</strong> Assessing how climate change may alter habitat suitability for this disease vector, which transmits dengue, Zika, chikungunya, and yellow fever.
+        <header>
+            <h1>Ian A. Pshea-Smith</h1>
+            <p class="subtitle">Spatial Epidemiologist & Vector Ecologist</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="bio">
+                <p>I am a PhD candidate in Medical Geography and Global Health at the University of Florida, where I investigate how environmental conditions shape vector-borne disease transmission patterns for higher-risk groups. My research integrates geography, community ecology, and public health to understand how complex factors like climate change influence mosquito and tick communities.</p>
             </div>
         </div>
         
-        <div class="content-box">
-            <h2>Methodology</h2>
+        <div class="links-section">
+            <a href="https://www.canva.com/design/DAG2ojMTPUg/ygyL3QU3OLlItihPerKqVA/view?utm_content=DAG2ojMTPUg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h484b2b292d" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>Curriculum Vitae</h3>
+            </a>
             
-            <h3>Statistical Approach</h3>
-            <div class="methods-grid">
-                <div class="method-card">
-                    <strong>Ensemble Modeling</strong>
-                    30 BRT model replicates with pseudo-absence generation
-                </div>
-                <div class="method-card">
-                    <strong>Climate Data</strong>
-                    19 bioclimatic variables from WorldClim
-                </div>
-                <div class="method-card">
-                    <strong>Future Projections</strong>
-                    CMIP6 scenarios at 1.5°C, 2°C, 3°C, and 4°C warming
-                </div>
-                <div class="method-card">
-                    <strong>Visualization</strong>
-                    Interactive Leaflet maps with plasma color scheme
-                </div>
-            </div>
+            <a href="https://scholar.google.com/citations?user=PGhcI0AAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>Google Scholar</h3>
+            </a>
             
-            <h3>Technologies Used</h3>
-            <ul>
-                <li><strong>R Programming:</strong> Core analysis platform</li>
-                <li><strong>Key Packages:</strong> <code>dismo</code>, <code>gbm</code>, <code>raster</code>, <code>leaflet</code>, <code>sf</code></li>
-                <li><strong>Visualization:</strong> <code>ggplot2</code>, <code>viridis</code> (plasma palette), <code>RColorBrewer</code></li>
-                <li><strong>Climate Data:</strong> <code>geodata</code> for CMIP6 warming level ensembles</li>
-                <li><strong>Web Platform:</strong> Quarto documents rendered to HTML, hosted on GitHub Pages</li>
-            </ul>
+            <a href="https://www.linkedin.com/in/ianpsheasmith/" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>LinkedIn</h3>
+            </a>
+            
+            <a href="https://geog.ufl.edu/directory/ian-pshea-smith/" target="_blank" rel="noopener noreferrer" class="link-card">
+                <h3>Institutional Profile</h3>
+            </a>
         </div>
         
-        <div class="content-box">
-            <h2>Outputs & Visualizations</h2>
-            
-            <h3>Interactive Maps</h3>
-            <p>Explore dynamic habitat suitability predictions with toggleable layers:</p>
-            <ul>
-                <li>Baseline ensemble suitability (current climate)</li>
-                <li>Individual BRT model predictions (30 replicates)</li>
-                <li>Warming level projections (1.5°C through 4.0°C)</li>
-                <li>Model uncertainty metrics (CV, standard deviation)</li>
-                <li>Population density and IDP distribution overlays</li>
-            </ul>
-            
-            <h3>Static Visualizations</h3>
-            <p>High-resolution figures using the plasma color scheme for publication-ready graphics showing spatial patterns of habitat suitability and prediction uncertainty across Haiti.</p>
+        <div class="projects-section">
+            <h2>Research Projects</h2>
+            <a href="https://ianpsheasmith.github.io/Aeae_SDMs_About.html" target="_blank" rel="noopener noreferrer" class="project-link">
+                <h3><i>Aedes aegypti</i> Species Distribution Models</h3>
+                <p>Interactive species distribution modeling for <i>Aedes aegypti</i> mosquitoes in Haiti, integrating climate data and population vulnerability assessments to predict arbovirus transmission risk under current and future scenarios.</p>
+            </a>
         </div>
         
-        <div class="content-box">
-            <h2>Data Sources</h2>
-            <ul>
-                <li><strong>Occurrence Data:</strong> Field trap surveys across Haiti</li>
-                <li><strong>Climate Data:</strong> WorldClim 2.1 (0.5 arc-minute resolution)</li>
-                <li><strong>Future Climate:</strong> CMIP6 multi-model ensemble projections</li>
-                <li><strong>Population:</strong> Gridded Population of the World (GPW v4.11, 2020)</li>
-                <li><strong>Administrative Boundaries:</strong> Haiti CNIGS ADM3 level shapefiles</li>
-                <li><strong>IDP Data:</strong> Internally displaced persons assessment data</li>
-            </ul>
-        </div>
-        
-        <div class="content-box">
-            <h2>Getting Started</h2>
-            <p>Browse the rendered HTML document to explore interactive maps and analyze habitat suitability predictions. Each map allows you to zoom, pan, and toggle between different model outputs and warming scenarios.</p>
-            
-            <a href="about.html" class="btn">View Full Analysis →</a>
-        </div>
+        <footer>
+            <p>&copy; 2025 Ian A. Pshea-Smith | University of Florida Department of Geography</p>
+        </footer>
     </div>
     
-    <footer>
-        <p>&copy; 2025 | Ecological Niche Modeling Project | Hosted on GitHub Pages</p>
-    </footer>
+    <!-- Parallax Scroll Effect -->
+    <script>
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        const header = document.querySelector('header');
+        const mainContent = document.querySelector('.main-content');
+        const linksSection = document.querySelector('.links-section');
+        const projectsSection = document.querySelector('.projects-section');
+        
+        if (header) header.style.transform = `translateY(${scrolled * 0.4}px)`;
+        if (mainContent) mainContent.style.transform = `translateY(${scrolled * 0.25}px)`;
+        if (linksSection) linksSection.style.transform = `translateY(${scrolled * 0.15}px)`;
+        if (projectsSection) projectsSection.style.transform = `translateY(${scrolled * 0.1}px)`;
+    });
+    </script>
 </body>
 </html>
