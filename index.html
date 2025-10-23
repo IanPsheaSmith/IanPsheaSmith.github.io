@@ -1,8 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive R Maps Repository</title>
+    <title>Haiti Aedes aegypti Ecological Niche Modeling</title>
     <style>
         * {
             margin: 0;
@@ -13,30 +14,32 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
+            color: #2b2b2b;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         
         header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            background: linear-gradient(135deg, #0d0887 0%, #7e03a8 50%, #cc4778 100%);
             color: white;
             padding: 3rem 2rem;
             text-align: center;
-            border-bottom: 4px solid #3498db;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         header h1 {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
         
         header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-style: italic;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 2rem auto;
             padding: 0 2rem;
         }
@@ -47,104 +50,203 @@
             margin-bottom: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            border-left: 4px solid #3498db;
+            border-left: 4px solid #cc4778;
         }
         
         h2 {
-            color: #2c3e50;
+            color: #7e03a8;
             margin-bottom: 1rem;
             font-size: 1.8rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
         }
         
         h3 {
-            color: #34495e;
+            color: #cc4778;
             margin-bottom: 0.8rem;
             margin-top: 1.5rem;
             font-size: 1.3rem;
         }
         
-        p {
-            margin-bottom: 1rem;
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .method-card {
+            background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #f89540;
+            transition: transform 0.2s;
+        }
+        
+        .method-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .method-card strong {
+            color: #7e03a8;
+            display: block;
+            margin-bottom: 0.3rem;
         }
         
         ul {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
             margin-bottom: 1rem;
         }
         
         li {
             margin-bottom: 0.5rem;
+            color: #4a4a4a;
         }
         
         a {
-            color: #3498db;
+            color: #cc4778;
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.2s;
         }
         
         a:hover {
-            color: #2980b9;
+            color: #7e03a8;
             text-decoration: underline;
         }
         
         .btn {
             display: inline-block;
-            background: #3498db;
+            background: linear-gradient(135deg, #cc4778 0%, #7e03a8 100%);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 5px;
             margin-top: 1rem;
-            transition: background 0.3s;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
         
         .btn:hover {
-            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             text-decoration: none;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe9f0 100%);
+            border-left: 4px solid #cc4778;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
         }
         
         footer {
             text-align: center;
             padding: 2rem;
-            color: #7f8c8d;
+            color: #666;
             font-size: 0.9rem;
+            background: rgba(255,255,255,0.8);
+            margin-top: 2rem;
+        }
+        
+        code {
+            background: #f5f5f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #7e03a8;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Interactive Map Visualizations</h1>
-        <p>R-Generated Geographic Data Visualizations</p>
+        <h1>Ecological Niche Modeling for <em>Aedes aegypti</em></h1>
+        <p>Climate-driven species distribution analysis in Haiti</p>
     </header>
     
     <div class="container">
         <div class="content-box">
-            <h2>About This Repository</h2>
-            <p>This repository hosts a collection of interactive maps and geographic visualizations created using R. These maps leverage modern web technologies and R packages to provide dynamic, exploratory data analysis tools.</p>
+            <h2>About This Project</h2>
+            <p>This repository hosts an ecological niche modeling analysis for <em>Aedes aegypti</em> mosquitoes in Haiti, utilizing ensemble Boosted Regression Tree (BRT) models to understand current species distribution patterns and predict changes under multiple climate warming scenarios.</p>
+            
+            <div class="highlight-box">
+                <strong>Key Focus:</strong> Assessing how climate change may alter habitat suitability for this disease vector, which transmits dengue, Zika, chikungunya, and yellow fever.
+            </div>
         </div>
         
         <div class="content-box">
-            <h2>What You'll Find Here</h2>
-            <h3>Interactive Maps</h3>
-            <p>Browse through various geographic visualizations built with R packages such as leaflet, plotly, and other mapping libraries.</p>
+            <h2>Methodology</h2>
+            
+            <h3>Statistical Approach</h3>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <strong>Ensemble Modeling</strong>
+                    30 BRT model replicates with pseudo-absence generation
+                </div>
+                <div class="method-card">
+                    <strong>Climate Data</strong>
+                    19 bioclimatic variables from WorldClim
+                </div>
+                <div class="method-card">
+                    <strong>Future Projections</strong>
+                    CMIP6 scenarios at 1.5°C, 2°C, 3°C, and 4°C warming
+                </div>
+                <div class="method-card">
+                    <strong>Visualization</strong>
+                    Interactive Leaflet maps with plasma color scheme
+                </div>
+            </div>
             
             <h3>Technologies Used</h3>
             <ul>
-                <li>R Programming Language</li>
-                <li>HTML/CSS for web presentation</li>
-                <li>JavaScript-based mapping libraries</li>
-                <li>GitHub Pages for hosting</li>
+                <li><strong>R Programming:</strong> Core analysis platform</li>
+                <li><strong>Key Packages:</strong> <code>dismo</code>, <code>gbm</code>, <code>raster</code>, <code>leaflet</code>, <code>sf</code></li>
+                <li><strong>Visualization:</strong> <code>ggplot2</code>, <code>viridis</code> (plasma palette), <code>RColorBrewer</code></li>
+                <li><strong>Climate Data:</strong> <code>geodata</code> for CMIP6 warming level ensembles</li>
+                <li><strong>Web Platform:</strong> Quarto documents rendered to HTML, hosted on GitHub Pages</li>
+            </ul>
+        </div>
+        
+        <div class="content-box">
+            <h2>Outputs & Visualizations</h2>
+            
+            <h3>Interactive Maps</h3>
+            <p>Explore dynamic habitat suitability predictions with toggleable layers:</p>
+            <ul>
+                <li>Baseline ensemble suitability (current climate)</li>
+                <li>Individual BRT model predictions (30 replicates)</li>
+                <li>Warming level projections (1.5°C through 4.0°C)</li>
+                <li>Model uncertainty metrics (CV, standard deviation)</li>
+                <li>Population density and IDP distribution overlays</li>
+            </ul>
+            
+            <h3>Static Visualizations</h3>
+            <p>High-resolution figures using the plasma color scheme for publication-ready graphics showing spatial patterns of habitat suitability and prediction uncertainty across Haiti.</p>
+        </div>
+        
+        <div class="content-box">
+            <h2>Data Sources</h2>
+            <ul>
+                <li><strong>Occurrence Data:</strong> Field trap surveys across Haiti</li>
+                <li><strong>Climate Data:</strong> WorldClim 2.1 (0.5 arc-minute resolution)</li>
+                <li><strong>Future Climate:</strong> CMIP6 multi-model ensemble projections</li>
+                <li><strong>Population:</strong> Gridded Population of the World (GPW v4.11, 2020)</li>
+                <li><strong>Administrative Boundaries:</strong> Haiti CNIGS ADM3 level shapefiles</li>
+                <li><strong>IDP Data:</strong> Internally displaced persons assessment data</li>
             </ul>
         </div>
         
         <div class="content-box">
             <h2>Getting Started</h2>
-            <p>Explore the available maps and visualizations. Each map is interactive and allows you to zoom, pan, and click on features for more information.</p>
-            <a href="about.html" class="btn">Learn More About This Project</a>
+            <p>Browse the rendered HTML document to explore interactive maps and analyze habitat suitability predictions. Each map allows you to zoom, pan, and toggle between different model outputs and warming scenarios.</p>
+            
+            <a href="about.html" class="btn">View Full Analysis →</a>
         </div>
     </div>
     
     <footer>
-        <p>&copy; 2025 | Hosted on GitHub Pages</p>
+        <p>&copy; 2025 | Ecological Niche Modeling Project | Hosted on GitHub Pages</p>
     </footer>
 </body>
 </html>
