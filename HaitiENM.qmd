@@ -16,6 +16,7 @@ format:
     embed-resources: true
     citations-hover: true
     footnotes-hover: true
+output-file: Aeae_SDMs_About.html
 execute:
   warning: false
   message: false
@@ -367,19 +368,21 @@ This analysis focuses on ecological niche modeling for *Aedes aegypti* mosquitoe
 
 # Future Climate Scenarios
 
-```{r, echo = FALSE}
-# In R, install and configure reticulate
-install.packages("reticulate")
+```{r }
+#| label: setup-python-environment
+#| echo: false
+#| eval: false
+
+# Only install if not already present
+if (!requireNamespace("reticulate", quietly = TRUE)) {
+  options(repos = c(CRAN = "https://cloud.r-project.org/"))
+  install.packages("reticulate")
+}
+
 library(reticulate)
 
-# Create a dedicated environment for climate data
-#conda_create("climate_env")
-#use_condaenv("climate_env")
-
-# Install required Python packages
-conda_install("climate_env", c("xarray", "rasterio", "geopandas", 
-                                "requests", "netCDF4", "zarr", "dask"))
-conda_install("climate_env", c("intake-esm", "regionmask"), pip = TRUE)
+# For conda/python setup, you typically only want to run this once
+# Set eval: false to prevent running during render
 
 ```
 
@@ -415,7 +418,7 @@ install_packages <- function() {
 install_packages()
 ```
 
-```{python, echo = FALSE}
+```{python, echo = FALSE, eval = FALSE}
 
 import xarray as xr
 import numpy as np
@@ -620,7 +623,7 @@ def stream_cmip6_opendap(opendap_url, haiti_bounds):
 
 ```
 
-```{python, echo = FALSE}
+```{python, echo = FALSE, eval = FALSE}
 # ============================================================================
 # Main Processing Pipeline
 # ============================================================================
@@ -774,7 +777,7 @@ if __name__ == "__main__":
             print(f"  {model}: {count}/{len(scenarios)*len(periods)} datasets")
 ```
 
-```{python, echo = FALSE}
+```{python, echo = FALSE, eval = FALSE}
 
 import os
 import time
@@ -2362,7 +2365,7 @@ if (n_successful > 0) {
             cat("- Aeae_individual_predictions: List of", length(valid_predictions), "individual model rasters\n")
             cat("- Aeae_successful_results: Detailed results for all successful models\n")
             cat("- Aeae_performance_summary: Model performance metrics\n")
-            cat(paste(rep("=", 60), collapse = "") + "\n")
+            cat(paste(rep("=", 60), collapse = ""), "\n")
             
         } else {
             cat("Failed to create ensemble statistics\n")
@@ -2822,9 +2825,16 @@ cat("  Mean CV:", mean_cv, "| Max CV:", max_cv, "\n")
 cat("  Mean SD:", mean_sd, "| Max SD:", max_sd, "\n")
 cat("Total interactive layers:", length(all_uncertainty_layers), "\n\n")
 
+
+
+```
+
+```{r}
+#| label: interactive-uncertainty-map
+#| code-summary: "Identify acceptable CMIP6 models and inventory downloaded data"
+
 # Display the interactive map
 print(interactive_uncertainty_map)
-
 ```
 
 ```{r, echo=FALSE}
@@ -4023,10 +4033,11 @@ if (length(wl_predictions_100) > 0) {
 }
 ```
 
-```{r}
+```{r, results='asis'}
 
 #| label: enhanced-interactive-warming-level-maps
 #| code-summary: "Create enhanced interactive leaflet maps with separate uncertainty maps and improved styling"
+#| output: asis
 
 library(leaflet)
 library(raster)
@@ -4322,7 +4333,7 @@ cat("\nDisplaying 1.5°C warming level uncertainty map:\n")
 print(uncertainty_interactive_maps[[1]])
 ```
 
-```{r}
+```{r, results='asis'}
 
 #| label: load-GPW2020-data
 #| code-summary: "Load in and map gridded population of the world data for Haiti"
@@ -4337,7 +4348,7 @@ print(uncertainty_interactive_maps[[1]])
     plot(GPW2020_cropped)
 ```
 
-```{r}
+```{r, results='asis'}
 
 #| label: load-IDP-data
 #| code-summary: "Load in & map IDP data"
@@ -4563,7 +4574,13 @@ print("IDP Distribution by Department:")
 print(dept_summary)
 ```
 
-```{r}
+```{r, results='asis'}
+
+#| label: Generate-final-map
+#| code-summary: "Generate the final map including predictions & population data"
+#| echo: false
+#| warning: false
+
 # Load required libraries
 library(leaflet)
 library(sf)
@@ -4573,11 +4590,6 @@ library(dplyr)
 library(htmltools)
 library(viridis)
 
-# Calculate zonal statistics for all rasters
-cat("Calculating zonal statistics for Haiti administrative level 3...\n")
-
-# Check raster types and convert if necessary
-cat("Checking raster types...\n")
 baseline_raster <- if(class(Aeae_ensemble_mean)[1] == "RasterBrick") {
   Aeae_ensemble_mean[[1]]  # Take first layer if it's a brick
 } else {
@@ -4754,9 +4766,6 @@ interactive_map <- leaflet(Haiti_adm3_with_stats) %>%
     opacity = 1
   )
 
-# Display the interactive map
-print(interactive_map)
-
 # Summary statistics
 cat("\n=== ZONAL STATISTICS SUMMARY ===\n")
 cat("Total administrative sections:", nrow(Haiti_adm3_with_stats), "\n")
@@ -4766,6 +4775,12 @@ cat("Sections with IDPs:", sum(Haiti_adm3_with_stats$total_idp_persons > 0, na.r
 # Store the enhanced dataset
 assign("Haiti_adm3_interactive", Haiti_adm3_with_stats, envir = .GlobalEnv)
 assign("haiti_interactive_map", interactive_map, envir = .GlobalEnv)
+
+# Display the interactive map
+print(interactive_map)
+```
+
+```         
 ```
 
 ## Save Document
