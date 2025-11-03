@@ -220,6 +220,16 @@
                 letter-spacing: 4px;
             }
             
+            .download-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .download-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
             .skills-container {
                 flex-direction: column;
             }
@@ -238,10 +248,74 @@
                 margin-top: 5px;
             }
         }
+        
+        /* Download PDF Section */
+        .download-section {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: #5B2C6F;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(91, 44, 111, 0.3);
+            background: #f9f9f9;
+        }
+        
+        .download-button svg {
+            transition: transform 0.3s ease;
+        }
+        
+        .download-button:hover svg {
+            transform: translateY(2px);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Download PDF Section -->
+        <div class="download-section">
+            <a href="https://ianpsheasmith.github.io/IAPS_CV_Oct2025.pdf" download="Ian_Pshea_Smith_CV.pdf" class="download-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Download CV as PDF
+            </a>
+        </div>
+        
         <!-- Header -->
         <h1>IAN PSHEA-SMITH, MPH</h1>
         <p class="subtitle">MEDICAL GEOGRAPHER & GLOBAL HEALTH EPIDEMIOLOGIST</p>
