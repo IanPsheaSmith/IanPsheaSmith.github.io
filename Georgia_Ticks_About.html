@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aedes aegypti Suitability in Haiti Under Climate Change</title>
+    <title>Tick Ecology in the country of Georgia</title>
     <style>
         * {
             margin: 0;
@@ -13,18 +14,18 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #e8e8e8;
-            background: linear-gradient(135deg, #0a0a0f 0%, #1a0b2e 100%);
+            background: linear-gradient(135deg, #0a0f0f 0%, #0b2e2e 100%);
             min-height: 100vh;
         }
         header {
-            background: linear-gradient(135deg, #000004 0%, #3b0f70 50%, #b12a90 75%, #fb9062 100%);
+            background: linear-gradient(135deg, #001414 0%, #0d4f4f 50%, #1a7a7a 75%, #3daaaa 100%);
             color: white;
             padding: 3.5rem 2rem;
             text-align: center;
             box-shadow: 0 6px 20px rgba(0,0,0,0.5);
         }
         header h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             margin-bottom: 0.8rem;
             font-weight: 600;
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
@@ -42,24 +43,24 @@
             padding: 0 2rem;
         }
         .content-box {
-            background: rgba(20, 15, 35, 0.85);
+            background: rgba(15, 35, 35, 0.85);
             padding: 2.5rem;
             margin-bottom: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            border-left: 4px solid #b12a90;
+            border-left: 4px solid #1a7a7a;
             backdrop-filter: blur(10px);
         }
         h2 {
-            color: #fb9062;
+            color: #5ec9c9;
             margin-bottom: 1.2rem;
             font-size: 2rem;
-            border-bottom: 2px solid rgba(251, 144, 98, 0.3);
+            border-bottom: 2px solid rgba(94, 201, 201, 0.3);
             padding-bottom: 0.7rem;
             letter-spacing: 0.3px;
         }
         h3 {
-            color: #fbb862;
+            color: #7dd8d8;
             margin-bottom: 1rem;
             margin-top: 1.8rem;
             font-size: 1.4rem;
@@ -72,20 +73,20 @@
             margin: 1.8rem 0;
         }
         .stat-card {
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.7) 0%, rgba(177, 42, 144, 0.5) 100%);
+            background: linear-gradient(135deg, rgba(13, 79, 79, 0.7) 0%, rgba(26, 122, 122, 0.5) 100%);
             padding: 1.5rem;
             border-radius: 8px;
-            border-left: 3px solid #fb9062;
+            border-left: 3px solid #5ec9c9;
             transition: all 0.3s;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
         .stat-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(251, 144, 98, 0.4);
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.85) 0%, rgba(177, 42, 144, 0.65) 100%);
+            box-shadow: 0 6px 20px rgba(94, 201, 201, 0.4);
+            background: linear-gradient(135deg, rgba(13, 79, 79, 0.85) 0%, rgba(26, 122, 122, 0.65) 100%);
         }
         .stat-card .stat-number {
-            color: #fb9062;
+            color: #5ec9c9;
             font-size: 2.2rem;
             font-weight: bold;
             display: block;
@@ -106,249 +107,319 @@
             color: #d8d8d8;
         }
         a {
-            color: #fb9062;
+            color: #5ec9c9;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.2s;
         }
         a:hover {
-            color: #ffc48c;
+            color: #8ce0e0;
             text-decoration: underline;
         }
         .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #b12a90 0%, #fb9062 100%);
+            background: linear-gradient(135deg, #1a7a7a 0%, #3daaaa 100%);
             color: white;
             padding: 0.9rem 1.8rem;
             border-radius: 6px;
             margin: 0.5rem 0.5rem 0.5rem 0;
             transition: all 0.3s;
-            box-shadow: 0 3px 10px rgba(177, 42, 144, 0.4);
+            box-shadow: 0 3px 10px rgba(26, 122, 122, 0.4);
             text-decoration: none;
             font-weight: 500;
         }
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(251, 144, 98, 0.6);
+            box-shadow: 0 6px 20px rgba(94, 201, 201, 0.6);
             text-decoration: none;
-            background: linear-gradient(135deg, #d13aa0 0%, #ffa572 100%);
+            background: linear-gradient(135deg, #2a8a8a 0%, #4dbaba 100%);
         }
         .highlight-box {
-            background: linear-gradient(135deg, rgba(177, 42, 144, 0.25) 0%, rgba(251, 144, 98, 0.25) 100%);
-            border-left: 4px solid #fb9062;
+            background: linear-gradient(135deg, rgba(26, 122, 122, 0.25) 0%, rgba(61, 170, 170, 0.25) 100%);
+            border-left: 4px solid #5ec9c9;
             padding: 1.3rem;
             margin: 1.3rem 0;
             border-radius: 6px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
-        .map-grid {
+        .figure-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1.8rem;
         }
-        .map-card {
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.5) 0%, rgba(20, 15, 35, 0.9) 100%);
-            padding: 1.8rem;
+        .figure-card {
+            background: linear-gradient(135deg, rgba(13, 79, 79, 0.5) 0%, rgba(15, 35, 35, 0.9) 100%);
+            padding: 1.2rem;
             border-radius: 10px;
-            border: 1px solid rgba(177, 42, 144, 0.4);
+            border: 1px solid rgba(26, 122, 122, 0.4);
             transition: all 0.3s;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        .map-card:hover {
-            border-color: #fb9062;
-            box-shadow: 0 6px 20px rgba(251, 144, 98, 0.4);
+        .figure-card:hover {
+            border-color: #5ec9c9;
+            box-shadow: 0 6px 20px rgba(94, 201, 201, 0.4);
             transform: translateY(-3px);
-            background: linear-gradient(135deg, rgba(59, 15, 112, 0.7) 0%, rgba(20, 15, 35, 0.95) 100%);
+            background: linear-gradient(135deg, rgba(13, 79, 79, 0.7) 0%, rgba(15, 35, 35, 0.95) 100%);
         }
-        .map-card h4 {
-            color: #fb9062;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+        .figure-card h4 {
+            color: #5ec9c9;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
             letter-spacing: 0.3px;
         }
-        .map-card p {
+        .figure-card p {
             color: #d8d8d8;
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+            margin-bottom: 0;
             line-height: 1.5;
+        }
+        .figure-card img {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(94, 201, 201, 0.3);
         }
         footer {
             text-align: center;
             padding: 2.5rem;
             color: #999;
             font-size: 0.9rem;
-            background: rgba(10, 10, 15, 0.9);
+            background: rgba(10, 15, 15, 0.9);
             margin-top: 3rem;
-            border-top: 1px solid rgba(177, 42, 144, 0.3);
+            border-top: 1px solid rgba(26, 122, 122, 0.3);
         }
         footer p {
             margin-bottom: 0.5rem;
         }
+        footer a {
+            color: #5ec9c9;
+        }
         code {
-            background: rgba(59, 15, 112, 0.4);
+            background: rgba(13, 79, 79, 0.4);
             padding: 0.3rem 0.5rem;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
-            color: #fb9062;
+            color: #5ec9c9;
             font-size: 0.9em;
         }
         strong {
-            color: #ffc48c;
+            color: #8ce0e0;
             font-weight: 600;
         }
         p {
             margin-bottom: 0.8rem;
         }
+        .species-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .species-item {
+            background: rgba(13, 79, 79, 0.3);
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            border-left: 3px solid #3daaaa;
+        }
+        .species-item em {
+            color: #7dd8d8;
+        }
+        .reference-list {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .reference-list li {
+            margin-bottom: 1rem;
+        }
+        .author-section {
+            background: linear-gradient(135deg, rgba(13, 79, 79, 0.3) 0%, rgba(15, 35, 35, 0.7) 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        .author-section h4 {
+            color: #5ec9c9;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .author-section p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .affiliation {
+            font-size: 0.85rem;
+            color: #b0b0b0;
+            margin-left: 1rem;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1><em>Aedes aegypti</em> Suitability in Haiti</h1>
-        <p>Modeling current and future distributions under climate change scenarios</p>
+        <h1>Tick Ecology in the country of Georgia</h1>
+        <p>An ecological analysis using ten years of surveillance data (2013–2023)</p>
     </header>
     
     <div class="container">
         <div class="content-box">
             <h2>Project Overview</h2>
-            <p>This project models the distribution of <em>Aedes aegypti</em> mosquitoes across Haiti under current climate conditions and projects how suitable habitat may expand under global warming scenarios of +1.5°C, +2°C, +3°C, and +4°C. <em>Aedes aegypti</em> is the primary vector for dengue virus, Zika virus, chikungunya virus, and yellow fever virus, all pathogens of past or present public health importance in Haiti.</p>
+            <p>This project characterizes tick ecology, community composition, and biogeographic patterns across the country of Georgia using 720 tick occurrence records representing 21 species collected from 2013 to 2023. The analysis integrates occurrence data with environmental covariates to develop species distribution models, identify bioregions, and describe co-occurrence patterns among medically relevant tick species.</p>
             
             <div class="highlight-box">
-                <strong>Key Finding:</strong> More than 8 million people in Haiti (44.85% of the population) currently live in areas with moderate risk of encountering <em>Aedes aegypti</em>. Under 4°C of warming, we project a dramatic increase to more than 95% of the population.
+                <strong>Key Finding:</strong> Tick diversity across Georgia is high (Shannon's H' = 2.40, Gini-Simpson = 0.89), with three distinct bioregions identified. Temperature emerged as the most influential environmental feature driving tick distribution and bioregionalization. Strong niche overlap was observed across all modeled species (mean Schoener's D = 0.91).
             </div>
         </div>
 
         <div class="content-box">
             <h2>Key Results</h2>
             
-            <h3>Current Distribution</h3>
+            <h3>Tick Diversity in Georgia</h3>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <span class="stat-number">28.6%</span>
-                    <span class="stat-label">of Haiti's landscape suitable (≥0.5 probability)</span>
+                    <span class="stat-number">720</span>
+                    <span class="stat-label">unique occurrence records collected</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">8.0M</span>
-                    <span class="stat-label">people at moderate risk</span>
+                    <span class="stat-number">21</span>
+                    <span class="stat-label">tick species across 5 genera</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">479K</span>
-                    <span class="stat-label">internally displaced people at moderate risk</span>
+                    <span class="stat-number">2.40</span>
+                    <span class="stat-label">Shannon's Diversity Index (H')</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0.89</span>
+                    <span class="stat-label">Gini-Simpson diversity index</span>
                 </div>
             </div>
 
-            <h3>Climate Change Projections</h3>
-            <p>Under warming scenarios, suitable habitat for <em>Aedes aegypti</em> is projected to expand dramatically across Haiti:</p>
-            <ul>
-                <li><strong>+1.5°C warming:</strong> Suitable area increases to 52% of landscape on average</li>
-                <li><strong>+2°C warming:</strong> Suitable area reaches 60% of landscape</li>
-                <li><strong>+3°C warming:</strong> Suitable area expands to 75% of landscape</li>
-                <li><strong>+4°C warming:</strong> Suitable area covers 86% of landscape</li>
-            </ul>
+            <h3>Most Frequently Recorded Species</h3>
+            <p>The species with the most occurrence records were:</p>
+            <div class="species-list">
+                <div class="species-item">
+                    <em>Ixodes ricinus</em> — 124 records (17.22%)
+                </div>
+                <div class="species-item">
+                    <em>Haemaphysalis punctata</em> — 118 records (16.39%)
+                </div>
+                <div class="species-item">
+                    <em>Dermacentor marginatus</em> — 105 records (14.58%)
+                </div>
+            </div>
+            <p>The genus <em>Haemaphysalis</em> was most represented with seven unique species comprising 36.8% of all occurrences.</p>
 
-            <h3>Geographic Patterns</h3>
-            <p>At baseline, the North-East Department showed the highest suitability (48.7% of the landscape suitable at least moderately suitable), followed by the North-West Department (mean = 0.41).</p>
-            
-            <p>The two Communes with highest baseline suitability were Caracol (mean = 0.84) and Delmas (mean = 0.83).</p>
+            <h3>Bioregionalization</h3>
+            <p>Three distinct tick bioregions were identified using spatially constrained hierarchical clustering. The most discriminating environmental covariates between bioregions were mean temperature of the coldest quarter (F = 128.33), temperature seasonality (F = 89.69), and mean temperature of the driest quarter (F = 85.32).</p>
+            <p>Bioregion 1 (central Georgia) contained the majority of occurrence records (84.31%) and maintained the highest species richness and Shannon's Diversity.</p>
+
+            <h3>Species Co-occurrence</h3>
+            <p>Nine statistically significant positive co-occurrence relationships were detected between species pairs, with no negative associations observed. The species pair with the highest number of shared locations was <em>D. marginatus</em> and <em>Ha. punctata</em> (14 shared sites), followed by <em>D. marginatus</em> and <em>Ha. parva</em> (12 sites).</p>
+
+            <h3>Species Distribution Models</h3>
+            <p>Seven species with at least 30 presence records were modeled using boosted regression trees. Across all seven species, the southeastern portion of Georgia showed the highest predicted probability of presence.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">0.91</span>
+                    <span class="stat-label">mean Schoener's D (niche overlap)</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0.74</span>
+                    <span class="stat-label">mean Warren's I (niche overlap)</span>
+                </div>
+            </div>
+            <p>Soil organic carbon composition emerged as the most frequently important predictor, appearing among the top three variables for five of seven species. Temperature measures were also commonly ranked highly, appearing in the top predictors for all species except <em>Ha. punctata</em>.</p>
         </div>
 
         <div class="content-box">
             <h2>About the Modeling Approach</h2>
-            <p>This analysis used ensemble Boosted Regression Tree (BRT) models based on 60 presence locations obtained from the VectorMap database and 19 bioclimatic variables from WorldClim 2.1 (at ~1km² resolution). Thirty model replicates were generated, with pseudo-absence points placed at least 717 meters from known presence locations (based on the species' maximum flight range described by Verdonschot and Besse-Lotoskaya in 2014).</p>
+            <p>Species distributions were modeled using a boosted regression tree (BRT) framework. Models were trained using 75% of data with 10-fold cross-validation. Pseudo-absence points were generated at least 25 km from presence locations, with equal numbers of pseudo-absence and presence points. Ten model replicates were generated per species, with the mean of predicted rasters used for finalized distribution maps.</p>
             
-            <p>Future climate projections were derived from 28 global climate models from CMIP6, screened to exclude models with transient climate response values outside IPCC-recommended ranges. The most influential variables for predicting <em>Aedes aegypti</em> distribution were annual mean temperature, maximum temperature of the warmest month, and temperature seasonality.</p>
+            <p>Bioregions were identified using Ward-like hierarchical clustering with spatial constraints (ClustGeo), considering both geographical distance and environmental similarity between 25 cluster-defined sites. Co-occurrence networks were constructed using both probabilistic and count-based approaches based on site-species matrices.</p>
+            
+            <p>Model parameters included 5,000 trees per model, interaction depth of 10, and learning rate of 0.01. Covariates with less than 1% relative influence were removed in a stepwise fashion.</p>
         </div>
 
         <div class="content-box">
             <h2>Data Sources</h2>
             <ul>
-                <li><strong>Mosquito Occurrences:</strong> 60 presence locations from VectorMap database (vectormap.si.edu)</li>
-                <li><strong>Climate Data:</strong> WorldClim 2.1 (30 arc-second resolution, ~1km²)</li>
-                <li><strong>Future Climate:</strong> CMIP6 warming level ensembles (28 GCMs)</li>
-                <li><strong>Population Data:</strong> Gridded Population of the World v4 (2020)</li>
-                <li><strong>Internally Displaced Persons:</strong> International Organization for Migration's Displacement Tracking Matrix (2024)</li>
+                <li><strong>Tick Collections:</strong> 720 occurrence records from 580 unique sites collected during 216 unique dates (2013–2023); tick data available at <a href="https://vectormap.si.edu" target="_blank">vectormap.si.edu</a></li>
+                <li><strong>Climate Data:</strong> WorldClim 2.1 bioclimatic variables</li>
+                <li><strong>Elevation & Slope:</strong> WorldPop database</li>
+                <li><strong>Vegetation:</strong> MODIS NDVI and EVI data</li>
+                <li><strong>Landcover:</strong> ESA WorldCover 2 Dataset</li>
+                <li><strong>Soil Data:</strong> SoilGrids (<a href="https://soilgrids.org" target="_blank">soilgrids.org</a>)</li>
             </ul>
+            
+            <p style="margin-top: 1.5rem;"><strong>Code & Data:</strong> All analysis code and processed data are available at <a href="https://github.com/IanPsheaSmith/GeorgiaTickDist" target="_blank">github.com/IanPsheaSmith/GeorgiaTickDist</a></p>
         </div>
 
         <div class="content-box">
-            <h2>Interactive Maps</h2>
-            <p>Explore the spatial patterns of <em>Aedes aegypti</em> suitability across Haiti. Each map provides interactive visualization with zoom, pan, and layer toggle capabilities.</p>
+            <h2>Study Figures</h2>
+            <p>Select figures from the analysis illustrating tick distributions, environmental associations, and community patterns.</p>
             
-            <div class="map-grid">
-                <div class="map-card">
-                    <h4>Study Site & Presence Locations</h4>
-                    <p>View the 60 documented <em>Aedes aegypti</em> presence locations across Haiti used to train the models.</p>
-                    <a href="01_Study_Site_Map.html" class="btn" target="_blank">View Map →</a>
+            <div class="figure-grid">
+                <div class="figure-card">
+                    <img src="georgia_caucasus_map.png" alt="Study area map">
+                    <h4>Study Area</h4>
+                    <p>The country of Georgia in the Caucasus region, comprising approximately 69,700 km² with diverse ecotones including high-elevation mountainous regions and lowland areas along the Black Sea Coast.</p>
                 </div>
                 
-                <div class="map-card">
-                    <h4>Pseudo-Absence Locations</h4>
-                    <p>Explore the generated pseudo-absence points used in the modeling approach, placed ≥717m from presence locations.</p>
-                    <a href="02_Pseudo_Absence_Map.html" class="btn" target="_blank">View Map →</a>
+                <div class="figure-card">
+                    <img src="Ixric_ensemble_with_legend_scalebar.png" alt="Ixodes ricinus distribution">
+                    <h4><em>Ixodes ricinus</em> Distribution</h4>
+                    <p>Ensemble habitat suitability prediction for <em>I. ricinus</em>, the most frequently recorded species (17.22% of records). Higher suitability shown in southeastern Georgia.</p>
                 </div>
                 
-                <div class="map-card">
-                    <h4>Baseline Suitability</h4>
-                    <p>Examine current-day predicted suitability for <em>Aedes aegypti</em> across Haiti, with 28.6% of the landscape showing moderate risk.</p>
-                    <a href="03_Baseline_Suitability_Map.html" class="btn" target="_blank">View Map →</a>
+                <div class="figure-card">
+                    <img src="species_cooccur_heatmap.png" alt="Species co-occurrence heatmap">
+                    <h4>Species Co-occurrence</h4>
+                    <p>Heatmap showing co-occurrence counts between all 21 tick species across the 25 cluster-defined sites.</p>
                 </div>
                 
-                <div class="map-card">
-                    <h4>Model Uncertainty</h4>
-                    <p>Assess prediction uncertainty across the 30 model replicates to identify areas of high confidence and disagreement.</p>
-                    <a href="04_Uncertainty_Map.html" class="btn" target="_blank">View Map →</a>
+                <div class="figure-card">
+                    <img src="variable_importance_heatmap.png" alt="Variable importance">
+                    <h4>Variable Importance</h4>
+                    <p>Relative importance of environmental variables across the seven modeled species. Soil organic carbon and temperature variables were frequently ranked as top predictors.</p>
                 </div>
                 
-                <div class="map-card">
-                    <h4>Climate Change Scenarios</h4>
-                    <p>Compare predictions under four warming scenarios (+1.5°C, +2°C, +3°C, +4°C) showing dramatic expansion of suitable habitat.</p>
-                    <a href="05_Comprehensive_Warming_Map.html" class="btn" target="_blank">View Map →</a>
+                <div class="figure-card">
+                    <img src="schoeners_matrix.png" alt="Schoener's D matrix">
+                    <h4>Niche Overlap (Schoener's D)</h4>
+                    <p>Pairwise niche overlap between modeled species. Darker colors indicate higher niche similarity. Mean Schoener's D across all pairs = 0.91.</p>
                 </div>
                 
-                <div class="map-card">
-                    <h4>Predictions by Communal Section at Baseline & Under Climate Change</h4>
-                    <p>Compare predictions under four warming scenarios (+1.5°C, +2°C, +3°C, +4°C) and at baseline for each communal section.</p>
-                    <a href="06_Section_Map.html" class="btn" target="_blank">View Map →</a>
-                </div>
-                
-                <div class="map-card">
-                    <h4>Predictions by Commune at Baseline & Under Climate Change</h4>
-                    <p>Compare predictions under four warming scenarios (+1.5°C, +2°C, +3°C, +4°C) and at baseline for each commune.</p>
-                    <a href="07_Commune_Map.html" class="btn" target="_blank">View Map →</a>
-                </div>
-                
-                <div class="map-card">
-                    <h4>Predictions by Department at Baseline & Under Climate Change</h4>
-                    <p>Compare predictions under four warming scenarios (+1.5°C, +2°C, +3°C, +4°C) and at baseline for each department.</p>
-                    <a href="08_Department_Map.html" class="btn" target="_blank">View Map →</a>
-                </div>
-                
-                <div class="map-card">
-                    <h4>Risk Index Values at Baseline & Under Climate Change by Commune</h4>
-                    <p>Compare Risk Index values (composite suitability, population density + IDP counts) spatially (by commune) and under warming scenarios.</p>
-                    <a href="communeriskmap.html" class="btn" target="_blank">View Map →</a>
-                </div>
-                
-                <div class="map-card">
-                    <h4>Risk Index Values at Baseline & Under Climate Change by Communal Section</h4>
-                    <p>Compare Risk Index values (composite suitability, population density + IDP counts) spatially (by communal section) and under warming scenarios.</p>
-                    <a href="sectionriskmap.html" class="btn" target="_blank">View Map →</a>
+                <div class="figure-card">
+                    <img src="suitability_comparison.png" alt="Suitability comparison">
+                    <h4>Suitability Comparison</h4>
+                    <p>Comparison of predicted habitat suitability across the seven modeled tick species in Georgia.</p>
                 </div>
             </div>
         </div>
 
         <div class="content-box">
             <h2>Public Health Implications</h2>
-            <p>These findings highlight the importance of understanding vector distributions in resource-constrained settings like Haiti. The projected expansion of suitable habitat under climate change represents an issue of global health equity, especially given the number of internally displaced people across Haiti's landscape.</p>
+            <p>This work describes the community ecology and biogeography of medically relevant tick species in Georgia. Multiple endemic species of public health importance are present, including <em>Dermacentor reticulatus</em>, <em>D. marginatus</em>, <em>Haemaphysalis parva</em>, <em>H. punctata</em>, and <em>Ixodes ricinus</em>.</p>
             
-            <p>Under 4°C of warming, suitable habitat is projected to expand into previously unsuitable areas in the Centre and Grand'Anse Departments, potentially exposing populations with limited vector control infrastructure to new disease transmission risks.</p>
+            <p>The strong positive co-occurrence patterns and high niche overlap between vector species underscore the need for integrated surveillance and multi-species control strategies. Areas suitable for one tick vector may support multiple species, potentially increasing exposure to multiple pathogens and complicating species-specific control measures.</p>
+            
+            <p>The predominance of temperature as a driver of tick distributions is particularly relevant under current environmental dynamics, where temperature variations may alter the suitability of regions for medically relevant species.</p>
+        </div>
+
+
+        <div class="content-box">
+            <h2>Disclaimer</h2>
+            <p>This webpage summarizes ongoing research on tick ecology in the country of Georgia. The findings presented are based on analysis of surveillance data collected from 2013–2023 and should be interpreted as regional-level patterns. Information is not yet peer-reviewed and should not be interpreted as final or approved for dissemination.</p>
+            
+            <p>Rarefaction analysis suggested that two to six additional tick species may be present in Georgia but were not collected in this analysis. Historical records indicate at least 29 unique species have been documented in Georgia.</p>
+            
+            <p>For the most current information or to discuss potential collaborations, don't hesitate to reach out!</p>
         </div>
     </div>
 
     <footer>
-        <p><em>Aedes aegypti</em> Ecological Niche Modeling in Haiti</p>
-        <p>Please contact <em>ianpsheasmith@ufl.edu</em> with any questions.</p>
-        <p>Hosted via GitHub Pages</p>
+        <p>Tick Ecology in the country of Georgia — Ten Years of Surveillance Data</p>
+        <p>Contact: <a href="mailto:ismithgh@umich.edu">ismithgh@umich.edu</a> | <a href="mailto:ianpsheasmith@ufl.edu">ianpsheasmith@ufl.edu</a></p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">Spatial Ecology and Epidemiology Research Laboratory | Emerging Pathogens Institute | University of Florida</p>
     </footer>
 </body>
 </html>
