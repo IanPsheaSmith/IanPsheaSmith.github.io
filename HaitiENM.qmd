@@ -224,7 +224,7 @@ This analysis focuses on ecological niche modeling for *Aedes aegypti* mosquitoe
 ```
 
 ```{r}
-#| label: Interactive visualization with mapgl
+#| label: Interactive visualization with leaflet
 #| code-summary: "Create interactive map of study sites in Haiti"
 #| fig-cap: "Haiti administrative boundaries and Aedes aegypti presence locations"
    
@@ -419,8 +419,6 @@ install_packages <- function() {
 
 install_packages()
 ```
-
-
 
 ```{python}
 #| label: python-cmip6-download
@@ -1179,7 +1177,7 @@ if __name__ == "__main__":
 
 ```
 
-Pseudo-absence Creation
+# Pseudoabsences
 
 ```{r}
 #| label: pseudo-absence-functions
@@ -2643,6 +2641,8 @@ interactive_suitability_map
 
 ```
 
+# BRT ENSEMBLE
+
 ```{r}
 #| label: visualize-ensemble-uncertainty-interactive
 #| code-summary: "Interactive leaflet map with model uncertainty metrics"
@@ -3985,7 +3985,7 @@ if (length(wl_predictions_100) > 0) {
 }
 ```
 
-```{r, results='asis'}
+```{r}
 #| label: comprehensive-interactive-map-radio
 #| code-summary: "Comprehensive interactive map using native layer control"
 #| echo: false
@@ -4280,6 +4280,8 @@ htmlwidgets::saveWidget(map, file = output_file, selfcontained = TRUE,
 cat("Saved to:", output_file, "\n")
 ```
 
+# HUMAN DATA
+
 ```{r}
 #| label: load-GPW2020-data
 #| code-summary: "Load in and map gridded population of the world data for Haiti"
@@ -4296,7 +4298,7 @@ cat("Saved to:", output_file, "\n")
     plot(GPW2020_cropped)
 ```
 
-```{r, results='asis'}
+```{r}
 #| label: load-IDP-data
 #| code-summary: "Load in & map IDP data"
 #| echo: false
