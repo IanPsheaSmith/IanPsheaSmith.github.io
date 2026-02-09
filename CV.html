@@ -288,12 +288,20 @@
                 transform: translateY(0);
             }
         }
+        /* Hide download button when printing/converting to PDF */
+        @media print {
+          .download-button,
+          button,
+          a[href*="pdf" i] {
+            display: none !important;
+          }
+        }
     </style>
 </head>
 <body>
         <!-- Download PDF Section -->
         <div class="download-section">
-            <a href="https://ianpsheasmith.github.io/IAPS_CV_Nov2025.pdf" download="Ian_Pshea_Smith_CV.pdf" class="download-button">
+            <a href="https://ianpsheasmith.github.io/IAPS_CV.pdf" download="Ian_Pshea_Smith_CV.pdf" class="download-button">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
