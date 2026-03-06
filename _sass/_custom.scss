@@ -1,0 +1,63 @@
+/* ==========================================
+   Ian's Custom Design Language
+   Black / White / Gold Palette
+   ========================================== */
+
+/* --- Color Variables --- */
+:root {
+  --gold: #d4af37;
+  --gold-dark: #b8941f;
+  --gold-light: #e8d090;
+  --charcoal: #1a1a1a;
+}
+
+/* --- Typography: Georgia for headings --- */
+.page__title,
+.archive__item-title,
+h1, h2, h3 {
+  font-family: 'Georgia', 'Times New Roman', serif !important;
+  color: var(--charcoal);
+}
+
+/* --- Gold accent links --- */
+a {
+  color: var(--gold-dark);
+  &:hover { color: var(--gold); }
+}
+
+/* --- Gold top border on nav bar --- */
+.masthead {
+  border-top: 3px solid var(--gold);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* --- Nav link hover --- */
+.greedy-nav a:hover {
+  color: var(--gold-dark);
+}
+
+/* --- Sidebar author styling --- */
+.author__name {
+  font-family: 'Georgia', serif;
+  color: var(--charcoal);
+}
+.author__bio {
+  color: #4a4a4a;
+  font-style: italic;
+}
+
+/* --- Gold underlines on content links --- */
+.page__content a {
+  text-decoration-color: var(--gold-light);
+  text-underline-offset: 3px;
+}
+
+/* --- Gold accent on footer --- */
+.page__footer {
+  border-top: 3px solid var(--gold);
+}
+
+/* --- Subtle gold accent on sidebar links --- */
+.author__urls a:hover {
+  color: var(--gold);
+}
