@@ -6,7 +6,7 @@ permalink: /publication/2024-09-01-corneal-don-review
 excerpt: 'This work reviews corneal donation reasonings worldwide.'
 date: 2024-09-01
 venue: 'Eye Banking and Corneal Transplantation'
-paperurl: 'https://journals.lww.com/ebctjournal/fulltext/2024/09000/perceptions_on_corneal_and_eye_donation_.4.aspx'
+paperurl: '/files/2024-psheasmith-ebct.pdf'
 citation: 'Pshea-Smith IA, Bashshur M, Itani W, Mofrad ZN, Stout E, Bashshur R. &quot;Perceptions on Corneal and Eye Donation: Implications for Corneal Donor Programs.&quot; <i>Eye Banking and Corneal Transplantation</i>. 2024 Sep 1;3(3):e0029. https://doi.org/10.1097/ebct.0000000000000029'
 ---
 The purpose of this study was to review available literature that discusses the attitudes, awareness, and perceptions among individuals and populations regarding corneal and eye donation worldwide, to identify barriers that hinder donor programs from achieving sustainable success.

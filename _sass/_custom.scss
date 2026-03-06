@@ -61,3 +61,74 @@ a {
 .author__urls a:hover {
   color: var(--gold);
 }
+
+/* === Dark Mode: Purple Theme === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gold: #b39ddb;          /* soft lavender */
+    --gold-dark: #9575cd;     /* deeper purple */
+    --gold-light: #d1c4e9;    /* light purple for accents */
+    --charcoal: #e0e0e0;      /* light text on dark bg */
+  }
+
+  body {
+    background-color: #1a1a2e !important;
+    color: #e0e0e0 !important;
+  }
+
+  .page, .page__inner-wrap, .page__content {
+    background-color: #1a1a2e !important;
+    color: #e0e0e0 !important;
+  }
+
+  .masthead {
+    background-color: #16213e !important;
+    border-top: 3px solid #9575cd !important;
+  }
+
+  .greedy-nav {
+    background-color: #16213e !important;
+  }
+
+  .greedy-nav a {
+    color: #d1c4e9 !important;
+  }
+
+  .greedy-nav a:hover {
+    color: #b39ddb !important;
+  }
+
+  .author__name {
+    color: #e0e0e0 !important;
+  }
+
+  .author__bio {
+    color: #bdbdbd !important;
+  }
+
+  .sidebar, .author__urls-wrapper {
+    background-color: #16213e !important;
+  }
+
+  a {
+    color: #b39ddb !important;
+  }
+
+  a:hover {
+    color: #d1c4e9 !important;
+  }
+
+  .page__footer {
+    background-color: #0f0f23 !important;
+    border-top: 3px solid #9575cd !important;
+    color: #bdbdbd !important;
+  }
+
+  .archive__item-title a {
+    color: #d1c4e9 !important;
+  }
+
+  .page__title {
+    color: #e0e0e0 !important;
+  }
+}
