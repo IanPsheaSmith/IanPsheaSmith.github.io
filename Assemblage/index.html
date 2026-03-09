@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vulnerabilising Assemblage | Haiti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050a10;
+            --bg-panel: #0E2841;
+            --accent-teal: #156082;
+            --accent-orange: #E97132;
+            --accent-blue: #0F9ED5;
+            --text-primary: #E8E8E8;
+            --text-muted: #9aafbf;
+            --text-dim: #5a7080;
+            --border-subtle: rgba(21, 96, 130, 0.25);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            padding: 6rem 2rem 5rem;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% 80%, rgba(21, 96, 130, 0.15) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 60% at 80% 20%, rgba(233, 113, 50, 0.08) 0%, transparent 70%),
+                linear-gradient(180deg, var(--bg-deep) 0%, #0a1520 100%);
+            z-index: 0;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent-orange);
+            border: 1px solid rgba(233, 113, 50, 0.4);
+            padding: 0.3rem 1rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+        .hero h1 em { font-style: italic; color: var(--accent-orange); }
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .hero-rule {
+            width: 60px;
+            height: 2px;
+            background: var(--accent-teal);
+            border: none;
+            margin: 2rem auto 0;
+        }
+
+        /* ── LAYOUT ── */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            padding: 3.5rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        section:last-of-type { border-bottom: none; }
+
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.4rem;
+            line-height: 1.2;
+        }
+        h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            margin-top: 2rem;
+        }
+        p { margin-bottom: 1rem; color: var(--text-muted); }
+        p + p { margin-top: 0; }
+
+        /* ── CALLOUT ── */
+        .callout {
+            position: relative;
+            background: linear-gradient(135deg, rgba(14, 40, 65, 0.6) 0%, rgba(21, 96, 130, 0.15) 100%);
+            padding: 1.8rem 1.8rem 1.8rem 2.4rem;
+            margin: 2rem 0;
+            border-radius: 2px;
+        }
+        .callout::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent-orange);
+        }
+        .callout p { color: var(--text-primary); margin-bottom: 0; }
+        .callout strong { color: var(--accent-orange); }
+
+        /* ── COG GRID ── */
+        .cog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            margin: 2rem 0;
+            background: var(--border-subtle);
+            border: 1px solid var(--border-subtle);
+        }
+        .cog-cell {
+            background: var(--bg-deep);
+            padding: 1.8rem;
+            transition: background 0.3s;
+        }
+        .cog-cell:hover { background: rgba(14, 40, 65, 0.5); }
+        .cog-cell h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .cog-cell h4 .cog-num {
+            display: inline-block;
+            width: 1.4rem;
+            height: 1.4rem;
+            line-height: 1.4rem;
+            text-align: center;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--bg-deep);
+            background: var(--accent-teal);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        .cog-cell p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.55;
+        }
+
+        /* ── PROPOSITIONS ── */
+        .prop-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding: 0;
+            counter-reset: prop;
+        }
+        .prop-list li {
+            counter-increment: prop;
+            position: relative;
+            padding: 0.9rem 0 0.9rem 3.2rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .prop-list li:last-child { border-bottom: none; }
+        .prop-list li::before {
+            content: counter(prop);
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            width: 2rem;
+            text-align: center;
+        }
+
+        /* ── FIGURE CARDS ── */
+        .figure-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        .fig-card {
+            border: 1px solid var(--border-subtle);
+            padding: 1.5rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .fig-card:hover {
+            border-color: var(--accent-teal);
+            background: rgba(14, 40, 65, 0.3);
+        }
+        .fig-card .fig-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-teal);
+            line-height: 1;
+            margin-bottom: 0.8rem;
+            opacity: 0.6;
+        }
+        .fig-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.6rem;
+        }
+        .fig-card p {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* ── HIGHLIGHTS ── */
+        .highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 2rem 0;
+        }
+        .hl-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .hl-item:last-child { border-bottom: none; }
+        .hl-marker {
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            margin-top: 0.55rem;
+        }
+        .hl-item p { margin-bottom: 0; color: var(--text-primary); }
+
+        /* ── REFERENCES ── */
+        .ref-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .ref-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(21, 96, 130, 0.1);
+            font-size: 0.88rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+        }
+        .ref-list li:last-child { border-bottom: none; }
+        .ref-list li strong { color: var(--text-muted); font-weight: 600; }
+
+        /* ── FOOTER ── */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 1rem;
+        }
+        footer p {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+        footer a { color: var(--accent-teal); text-decoration: none; transition: color 0.2s; }
+        footer a:hover { color: var(--accent-orange); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2.2rem; }
+            .cog-grid { grid-template-columns: 1fr; }
+            .figure-row { grid-template-columns: 1fr; }
+            .hero { padding: 4rem 1.5rem 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-content">
+        <span class="hero-label">Working Paper</span>
+        <h1>The Vulnerabilising <em>Assemblage</em></h1>
+        <p class="hero-subtitle">
+            Climate change, colonisation, conflict and corruption as synergistic vulnerabilising structures in Haiti
+        </p>
+        <hr class="hero-rule">
+    </div>
+</div>
+
+<div class="container">
+
+    <section>
+        <div class="section-label">Overview</div>
+        <h2>Process, not essence</h2>
+        <p>
+            This project examines how climate change, colonisation, conflict and corruption interact as components of a <em>vulnerabilising assemblage</em> in Haiti, drawing on Deleuzian assemblage theory and decolonial thought.
+            Rather than essentialising Haiti or Haitians as "vulnerable," we analyse the structures and processes that actively produce vulnerability&mdash;particularly towards infectious disease.
+        </p>
+        <p>
+            Building on Wiesel and Power's (2023) conceptualisation, we adapt and extend the vulnerabilising assemblage framework into health geography and decolonial praxis, using the cholera epidemic in Haiti as a case study.
+        </p>
+
+        <div class="callout">
+            <p>
+                <strong>Core argument:</strong>
+                The four cogs of the assemblage do not operate in isolation. Their synergistic interaction produces emergent and generative vulnerabilising outcomes that cannot be reduced to any single factor, and that must be understood historically, structurally and relationally.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Framework</div>
+        <h2>The four cogs</h2>
+        <p>
+            We describe four components&mdash;referred to as cogs&mdash;of a vulnerabilising assemblage within Haiti.
+            Each vulnerabilises towards infectious disease through distinct pathways, but it is their interaction that generates the emergent properties of the assemblage.
+        </p>
+
+        <div class="cog-grid">
+            <div class="cog-cell">
+                <h4><span class="cog-num">I</span>Climate Change</h4>
+                <p>Exacerbates natural hazards, alters vector ecology and disrupts sanitation and healthcare systems.</p>
+            </div>
+            <div class="cog-cell">
+                <h4><span class="cog-num">II</span>Colonisation</h4>
+                <p>Creates external dependencies, impoverishing structures and systemic inequities rooted in settler colonialism and neocolonial governance.</p>
+            </div>
+            <div class="cog-cell">
+                <h4><span class="cog-num">III</span>Conflict</h4>
+                <p>Degrades healthcare and sanitation systems, generates displacement and diverts resources from public health.</p>
+            </div>
+            <div class="cog-cell">
+                <h4><span class="cog-num">IV</span>Corruption</h4>
+                <p>Erodes institutional trust, fuels vaccine hesitancy and corrodes systems that could otherwise reduce harm.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Theory</div>
+        <h2>Assemblage theory and the vulnerabilising assemblage</h2>
+
+        <h3>Assemblage as machine</h3>
+        <p>
+            Assemblage theory, originating with Deleuze and Guattari (1987) and developed by DeLanda (2016), describes systems as multiplicities of heterogeneous components whose interactions produce emergent, irreducible properties.
+            We treat the four structures as cogs within a vulnerabilising machine: interconnected components whose outputs feed into one another.
+        </p>
+
+        <h3>Wiesel and Power's six propositions</h3>
+        <p>
+            We mobilise and restate the six propositions of Wiesel and Power (2023), which describe how vulnerabilising assemblages operate:
+        </p>
+        <ol class="prop-list">
+            <li>The assemblage operates principally through engendering susceptibilities to harm.</li>
+            <li>The assemblage corroborates structures that permit harm and deconstructs those that prevent it.</li>
+            <li>Vulnerabilising effects are not necessarily intentional, but they may be.</li>
+            <li>Effects are often self-reinforcing, but they are not infinitely enduring.</li>
+            <li>The assemblage is composed of heterogeneous components operating at multiple scales.</li>
+            <li>The assemblage must be understood historically and contextually.</li>
+        </ol>
+
+        <h3>Three vulnerabilising mechanisms</h3>
+        <p>
+            Each cog may be linked to disease outbreaks through three distinct mechanisms: direct exposure to harm, the legitimisation of harm, and the erosion or deconstruction of systems of harm reduction and prevention.
+        </p>
+
+        <h3>Decolonial praxis</h3>
+        <p>
+            We explicitly integrate decolonial theory, drawing on Fanon and Tuhiwai Smith. This moves away from essentialising language that describes populations as inherently vulnerable and instead examines the colonial, political and structural processes that produce vulnerability.
+        </p>
+    </section>
+
+    <section>
+        <div class="section-label">Application</div>
+        <h2>Case study: cholera in Haiti</h2>
+        <p>
+            The cholera epidemic in Haiti illustrates the operation of the vulnerabilising assemblage. All four cogs contributed to the conditions under which the epidemic emerged and persisted.
+        </p>
+        <p>
+            Corruption generated vaccine hesitancy and systemic mistrust. Colonisation and neocolonial processes produced external dependencies and impoverished public health infrastructure. Conflict drove displacement, overcrowding in camps and degradation of sanitation systems. Climate change altered natural hazard dynamics, exacerbating conditions for waterborne disease transmission.
+        </p>
+        <p>
+            Critically, the epidemic was introduced by United Nations peacekeepers&mdash;itself an intersection of conflict and neocolonial governance&mdash;demonstrating how the cogs interact to produce outcomes that no single factor could explain in isolation.
+        </p>
+    </section>
+
+    <section>
+        <div class="section-label">Figures</div>
+        <h2>Conceptual diagrams</h2>
+        <p>
+            Three figures illustrate the conceptual framework and its application to cholera in Haiti.
+        </p>
+
+        <div class="figure-row">
+            <div class="fig-card">
+                <div class="fig-num">1</div>
+                <h4>Vulnerabilising pathways</h4>
+                <p>Pathways by which each cog links to disease outbreaks through directly potentiating harm, legitimising harm, or deconstructing systems of harm reduction.</p>
+            </div>
+            <div class="fig-card">
+                <div class="fig-num">2</div>
+                <h4>The assemblage as machine</h4>
+                <p>The four cogs together, with their vulnerabilising outputs interacting and feeding back to produce an emergent and generative system.</p>
+            </div>
+            <div class="fig-card">
+                <div class="fig-num">3</div>
+                <h4>Cholera pathways</h4>
+                <p>Proposed pathways of how each cog of the assemblage specifically potentiates a cholera outbreak in Haiti.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Highlights</div>
+        <h2>Key contributions</h2>
+        <div class="highlights">
+            <div class="hl-item">
+                <span class="hl-marker"></span>
+                <p>Climate change, colonisation, conflict and corruption synergistically vulnerabilise</p>
+            </div>
+            <div class="hl-item">
+                <span class="hl-marker"></span>
+                <p>Historic and present contexts in Haiti co-construct emergent and generative outcomes</p>
+            </div>
+            <div class="hl-item">
+                <span class="hl-marker"></span>
+                <p>Vulnerabilising assemblage theory is translated into health geography and decolonial thinking</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Implications</div>
+        <h2>Beyond static vulnerability</h2>
+        <p>
+            This framework moves beyond static vulnerability indices and essentialising language. By viewing vulnerability as actively produced through interconnected structures and processes, we open space for more historically grounded analyses of health disparities.
+        </p>
+        <p>
+            The vulnerabilising assemblage approach is not limited to Haiti or to cholera. It provides a transferable conceptual and methodological tool for examining how structural forces co-produce health inequities, and for grounding public health interventions in the material and political conditions that give rise to harm.
+        </p>
+    </section>
+
+    <section>
+        <div class="section-label">References</div>
+        <h2>Key references</h2>
+        <ul class="ref-list">
+            <li><strong>Deleuze, G. &amp; Guattari, F.</strong> (1987). <em>A Thousand Plateaus</em>. University of Minnesota Press.</li>
+            <li><strong>DeLanda, M.</strong> (2016). <em>Assemblage Theory</em>. Edinburgh University Press.</li>
+            <li><strong>Wiesel, I. &amp; Power, E. R.</strong> (2023). Primed for harm: Inaccessible housing as a vulnerabilising assemblage. <em>Geoforum</em>, 145, 103826.</li>
+            <li><strong>Amoako, C. &amp; Frimpong Boamah, E.</strong> (2020). Becoming vulnerable to flooding: An urban assemblage view. <em>Planning Theory &amp; Practice</em>, 21(3), 371&ndash;391.</li>
+            <li><strong>von Meding, J. &amp; Chmutina, K.</strong> (2023). From labelling weakness to liberatory praxis. <em>Disaster Prevention and Management</em>, 32(2), 364&ndash;378.</li>
+            <li><strong>Buchanan, I.</strong> (2020). <em>Assemblage Theory and Method</em>. Bloomsbury Academic.</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p>The Vulnerabilising Assemblage &middot; Haiti</p>
+    <p><a href="mailto:ianpsheasmith@ufl.edu">ianpsheasmith@ufl.edu</a></p>
+    <p>Hosted via GitHub Pages</p>
+</footer>
+
+</body>
+</html>
