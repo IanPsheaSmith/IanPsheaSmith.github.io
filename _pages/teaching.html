@@ -5,8 +5,10 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
-
 {% for post in site.teaching reversed %}
-  {% include archive-single.html %}
+  <h2 style="margin-bottom: 0.2rem; margin-top: 1.5rem;">{{ post.title }}</h2>
+  <p style="color: #666; margin-bottom: 0.3rem;"><em>{{ post.type }}, {{ post.venue }}</em></p>
+  <p style="margin-bottom: 0.5rem;">{{ post.excerpt }}</p>
+  <p>{{ post.content | strip_html }}</p>
+  <hr style="border: none; border-top: 1px solid #ddd; margin-top: 1rem;">
 {% endfor %}

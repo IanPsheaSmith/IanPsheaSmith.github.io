@@ -7,7 +7,14 @@ excerpt: 'This work describes insecticide resistance in <i>Aedes aegypti</i> fro
 date: 2026-01-20
 venue: 'Journal of Medical Entomology'
 paperurl: '/files/2026-motes-jme.pdf'
-citation: 'Motes J, Wilson B, <strong>Pshea-Smith IA</strong>, Matulis GA, Bird JT, So J, Boncy J, Sutherland IW, Hamilton T, Dunford J, Scime S, Tarigopula N, Minard-Smith A, Existe A, Koehler JW, Okech BA, von Fricken ME, Blanton J. &quot;Molecular detection of insecticide resistance markers in <i>Aedes aegypti</i> (Diptera: Culicidae) populations from Haiti.&quot; <i>Journal of Medical Entomology</i>. 2026 Jan;63(1):tjaf195. https://doi.org/10.1093/jme/tjaf195.
+citation: >
+  Motes J, Wilson B, <strong>Pshea-Smith IA</strong>, Matulis GA,
+  Bird JT, So J, Boncy J, Sutherland IW, Hamilton T, Dunford J,
+  Scime S, Tarigopula N, Minard-Smith A, Existe A, Koehler JW,
+  Okech BA, von Fricken ME, Blanton J. "Molecular detection of
+  insecticide resistance markers in <i>Aedes aegypti</i> (Diptera:
+  Culicidae) populations from Haiti." <i>Journal of Medical
+  Entomology</i>. 2026 Jan;63(1):tjaf195.
 ---
 <i>Aedes aegypti</i> (Linnaeus, 1762) mosquitoes are the primary vectors of several arboviruses of major public health importance, including dengue virus, Zika virus, chikungunya virus, and yellow fever virus. In Haiti, <i>Ae. aegypti</i> mosquitoes are highly abundant and linked to the transmission and spread of these pathogens. As the use of pesticides for control of mosquitoes increases, there is heightened selection pressure for insecticide-resistant (IR) mosquitoes, mitigating the efficacy of pesticides and leading to an increased risk of continual pathogen transmission. To this end, active surveillance of resistance status can inform more effective operational control strategies. 
 In this study, we screened 421 individual <i>Ae. aegypti</i> mosquitoes collected from the Ouest department of Haiti between 2018 and 2019 for the presence of IR mutations S989P, F1534C, V1016I, and V1016G. 

@@ -11,12 +11,17 @@
   --charcoal: #1a1a1a;
 }
 
-/* --- Typography: Georgia for headings --- */
-.page__title,
-.archive__item-title,
-h1, h2, h3 {
+/* === Consistent Typography === */
+body {
   font-family: 'Georgia', 'Times New Roman', serif !important;
-  color: var(--charcoal);
+}
+
+.author__bio, .page__content p, .archive__item-excerpt {
+  font-family: 'Georgia', 'Times New Roman', serif !important;
+}
+
+.greedy-nav a, .nav__title, .toc__menu a {
+  font-family: 'Georgia', 'Times New Roman', serif !important;
 }
 
 /* --- Gold accent links --- */
