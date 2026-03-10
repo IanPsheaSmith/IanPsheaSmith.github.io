@@ -288,6 +288,26 @@
                 transform: translateY(0);
             }
         }
+        /* ── BACK LINK ── */
+        .back-link {
+            text-align: center;
+            padding: 2.5rem 0 3.5rem;
+        }
+        .back-link a {
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--teal);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .back-link a:hover {
+            color: var(--teal-deep);
+            border-color: var(--teal);
+        }        
         /* Hide download button when printing/converting to PDF */
         @media print {
           .download-button,
@@ -802,5 +822,8 @@
             </div>
         </div>
     </div>
+<div class="back-link">
+    <a href="https://ianpsheasmith.github.io">&larr; Back to Main Site</a>
+</div>    
 </body>
 </html>
