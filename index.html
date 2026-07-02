@@ -1,293 +1,554 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ian A. Pshea-Smith | Medical Geography & Global Health</title>
-    <style>
-        /* Black, White, Gold Color Palette */
-        :root {
-            --black: #000000;
-            --charcoal: #1a1a1a;
-            --white: #ffffff;
-            --off-white: #fafafa;
-            --gold: #d4af37;
-            --gold-dark: #b8941f;
-            --gold-light: #e8d090;
-            --gray: #4a4a4a;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: var(--white);
-            color: var(--black);
-            line-height: 1.7;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        header, .main-content, .links-section, .projects-section {
-            transition: transform 0.1s ease-out;
-            will-change: transform;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            padding: 3rem 2rem 2.5rem;
-            background: var(--off-white);
-            border-radius: 2px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-            border-top: 3px solid var(--gold);
-        }
-        h1 {
-            font-size: 3rem;
-            font-weight: 400;
-            margin-bottom: 0.75rem;
-            color: var(--black);
-            letter-spacing: 1px;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--gold-dark);
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-            font-style: italic;
-        }
-        .tagline {
-            font-size: 1rem;
-            color: var(--gray);
-            font-family: 'Segoe UI', sans-serif;
-            font-weight: 300;
-        }
-        .main-content {
-            background: var(--off-white);
-            border-radius: 2px;
-            padding: 2rem 2.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-            border-top: 3px solid var(--gold);
-        }
-        .bio {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            text-align: justify;
-            color: var(--gray);
-        }
-        .links-section {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-        .link-card {
-            background: var(--white);
-            border-radius: 2px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            position: relative;
-            overflow: hidden;
-        }
-        .link-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--gold);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-            transform-origin: left;
-        }
-        .link-card:hover::before {
-            transform: scaleX(1);
-        }
-        .link-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-            border-color: var(--gold);
-        }
-        .link-card h3 {
-            color: var(--black);
-            font-size: 1.15rem;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-family: 'Segoe UI', sans-serif;
-            transition: color 0.3s ease;
-        }
-        .link-card:hover h3 {
-            color: var(--gold-dark);
-        }
-        .link-card p {
-            color: #666;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        .projects-section {
-            background: var(--off-white);
-            border-radius: 2px;
-            padding: 2.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-            border-top: 3px solid var(--gold);
-        }
-        .projects-section h2 {
-            color: var(--black);
-            font-size: 1.75rem;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-        .project-link {
-            display: block;
-            background: var(--white);
-            border-radius: 2px;
-            padding: 2rem;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
-            border-left: 4px solid var(--gold);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            margin-bottom: 1.5rem;
-        }
-        .project-link:last-child {
-            margin-bottom: 0;
-        }
-        .project-link:hover {
-            transform: translateX(8px);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-            border-left-color: var(--gold-dark);
-        }
-        .project-link h3 {
-            color: var(--black);
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-            font-family: 'Segoe UI', sans-serif;
-            transition: color 0.3s ease;
-        }
-        .project-link:hover h3 {
-            color: var(--gold-dark);
-        }
-        .project-link p {
-            color: var(--gray);
-            font-family: 'Segoe UI', sans-serif;
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #666;
-            font-size: 0.85rem;
-            margin-top: 3rem;
-            border-top: 1px solid #e0e0e0;
-        }
-        /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.25rem;
-            }
-            .container {
-                padding: 2rem 1rem;
-            }
-            .main-content, .projects-section {
-                padding: 1.5rem;
-            }
-            .links-section {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* Subtle animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .container > * {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        header { animation-delay: 0s; }
-        .main-content { animation-delay: 0.1s; }
-        .links-section { animation-delay: 0.2s; }
-        .projects-section { animation-delay: 0.3s; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ian A. Pshea-Smith — Medical Geographer & Vector Ecologist</title>
+<meta name="description" content="Ian A. Pshea-Smith, PhD, MPH — medical geographer and vector ecologist at the Smiley Evans Lab, UC Berkeley. Species distribution modeling, zoonotic spillover, and spatial risk mapping of vector-borne disease.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e1512'/%3E%3Cg stroke='%23d4af37' stroke-width='1.5' fill='none'%3E%3Ccircle cx='16' cy='16' r='7'/%3E%3Cline x1='16' y1='2' x2='16' y2='30'/%3E%3Cline x1='2' y1='16' x2='30' y2='16'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e1512;          /* deep vegetation-black canvas */
+    --ink-2:#131e19;        /* lifted panel */
+    --ink-3:#18251f;        /* card */
+    --line:#2a3a32;         /* graticule / hairlines */
+    --paper:#eee9dc;        /* warm map paper (primary text) */
+    --paper-dim:#a9b4ac;    /* muted text */
+    --paper-faint:#71807a;  /* captions */
+    --gold:#d4af37;         /* wayfinding accent (continuity) */
+    --gold-deep:#b8941f;
+    --terrain:#6fae8b;      /* WorldCover sage-green, secondary accent */
+    --terrain-deep:#3f6b56;
+    --focus:#e8d090;
+    --display:'Fraunces', Georgia, serif;
+    --body:'Public Sans', system-ui, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    font-family:var(--body);
+    background:var(--ink);
+    color:var(--paper);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* faint map graticule over the whole page */
+  body::before{
+    content:"";
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size:88px 88px;
+    opacity:.16;
+    mask-image:radial-gradient(ellipse 120% 90% at 50% 30%, #000 40%, transparent 100%);
+  }
+  .wrap{position:relative; z-index:1; max-width:1080px; margin:0 auto; padding:0 clamp(1.2rem,4vw,2.5rem)}
+
+  a{color:inherit}
+  ::selection{background:var(--gold); color:var(--ink)}
+  :focus-visible{outline:2px solid var(--focus); outline-offset:3px; border-radius:2px}
+
+  /* ---------- shared type ---------- */
+  .mono{font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--paper-faint)}
+  .eyebrow{
+    font-family:var(--mono); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--gold); display:inline-flex; align-items:center; gap:.6rem; margin-bottom:1.4rem;
+  }
+  .eyebrow .reg{width:.85rem;height:.85rem;flex:none}
+  .reg circle,.reg line{stroke:currentColor; fill:none; stroke-width:1.4}
+
+  h2{font-family:var(--display); font-weight:500; font-size:clamp(1.7rem,3.6vw,2.5rem); line-height:1.1; letter-spacing:-.01em}
+  section > .wrap > h2{margin-bottom:1.6rem}
+
+  /* ---------- top rail ---------- */
+  .rail{
+    position:sticky; top:0; z-index:20;
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    padding:.85rem 0; border-bottom:1px solid var(--line);
+    background:color-mix(in srgb, var(--ink) 82%, transparent);
+    backdrop-filter:blur(9px);
+  }
+  .rail .id{font-family:var(--mono); font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--paper-dim)}
+  .rail .id b{color:var(--paper); font-weight:500}
+  .rail nav{display:flex; gap:1.4rem}
+  .rail nav a{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--paper-faint); text-decoration:none; transition:color .2s; position:relative}
+  .rail nav a:hover{color:var(--gold)}
+  @media (max-width:720px){.rail nav{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(3.5rem,9vw,7rem) 0 clamp(2.5rem,6vw,4.5rem); position:relative}
+  .hero .station{display:flex; align-items:center; gap:.8rem; margin-bottom:clamp(1.8rem,4vw,2.8rem); flex-wrap:wrap}
+  .hero .station .dot{width:7px;height:7px;border-radius:50%;background:var(--terrain);box-shadow:0 0 0 4px color-mix(in srgb,var(--terrain) 25%,transparent)}
+  .hero .station span{font-family:var(--mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--paper-faint)}
+  .hero .station b{color:var(--paper-dim); font-weight:400}
+
+  .namemark{display:flex; flex-direction:column; gap:clamp(.2rem,1vw,.6rem); align-items:flex-start}
+  .namemark img{display:block; height:auto; filter:drop-shadow(0 8px 30px rgba(0,0,0,.55))}
+  .namemark .ln1 img{width:clamp(96px,20vw,168px)}
+  .namemark .ln2{display:flex; align-items:center; gap:clamp(.4rem,1.4vw,1rem); flex-wrap:wrap}
+  .namemark .ln2 img{width:clamp(200px,40vw,360px)}
+  .namemark .ln2 .hyph{width:clamp(22px,4vw,54px); height:3px; background:var(--gold); flex:none; border-radius:2px}
+  /* horizon baseline under the name */
+  .namemark::after{content:""; display:block; width:min(100%,640px); height:1px; margin-top:1.4rem; background:linear-gradient(to right,var(--gold),transparent)}
+
+  .thesis{font-family:var(--display); font-weight:400; font-size:clamp(1.25rem,2.7vw,1.9rem); line-height:1.34; max-width:24ch; margin:clamp(1.6rem,4vw,2.4rem) 0 clamp(1.8rem,4vw,2.6rem); color:var(--paper)}
+  .thesis em{font-style:italic; color:var(--gold)}
+
+  .links{display:flex; flex-wrap:wrap; gap:.7rem}
+  .chip{
+    display:inline-flex; align-items:center; gap:.55rem;
+    font-family:var(--mono); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--paper); text-decoration:none;
+    border:1px solid var(--line); border-radius:2px; padding:.6rem .95rem;
+    background:var(--ink-2); transition:border-color .2s, color .2s, transform .2s, background .2s;
+  }
+  .chip svg{width:.8rem;height:.8rem}
+  .chip .reg circle,.chip .reg line{stroke:var(--gold)}
+  .chip:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px)}
+  .chip.solid{background:var(--gold); color:var(--ink); border-color:var(--gold)}
+  .chip.solid .reg circle,.chip.solid .reg line{stroke:var(--ink)}
+  .chip.solid:hover{background:var(--gold-deep); color:var(--ink); border-color:var(--gold-deep)}
+
+  /* ---------- generic section rhythm ---------- */
+  section{padding:clamp(3rem,7vw,5.5rem) 0; border-top:1px solid var(--line)}
+
+  /* position / at-a-glance */
+  .position{display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(2rem,5vw,4rem); align-items:start}
+  @media (max-width:820px){.position{grid-template-columns:1fr}}
+  .bio p{font-size:1.08rem; color:var(--paper-dim); max-width:46ch}
+  .bio p + p{margin-top:1.1rem}
+  .bio b{color:var(--paper); font-weight:500}
+  .portrait{position:relative}
+  .portrait img{width:100%; display:block; border:1px solid var(--line); border-radius:3px; filter:grayscale(.15) contrast(1.02)}
+  .portrait figcaption{font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--paper-faint); margin-top:.7rem; display:flex; justify-content:space-between}
+
+  .facts{margin-top:2rem; border-top:1px solid var(--line)}
+  .facts .row{display:grid; grid-template-columns:8.5rem 1fr; gap:1rem; padding:.85rem 0; border-bottom:1px solid var(--line)}
+  .facts .row dt{font-family:var(--mono); font-size:.68rem; letter-spacing:.13em; text-transform:uppercase; color:var(--gold); padding-top:.15rem}
+  .facts .row dd{color:var(--paper-dim); font-size:.96rem}
+  @media (max-width:480px){.facts .row{grid-template-columns:1fr; gap:.2rem}}
+
+  /* research themes */
+  .themes{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line)}
+  @media (max-width:720px){.themes{grid-template-columns:1fr}}
+  .theme{background:var(--ink-2); padding:clamp(1.5rem,3vw,2rem); transition:background .25s; position:relative}
+  .theme:hover{background:var(--ink-3)}
+  .theme .ix{font-family:var(--mono); font-size:.7rem; color:var(--gold); letter-spacing:.14em}
+  .theme h3{font-family:var(--display); font-weight:500; font-size:1.22rem; line-height:1.22; margin:.6rem 0 .7rem}
+  .theme p{color:var(--paper-dim); font-size:.95rem; max-width:38ch}
+  .tags{display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.1rem}
+  .tag{font-family:var(--mono); font-size:.64rem; letter-spacing:.08em; text-transform:uppercase; color:var(--terrain); border:1px solid var(--terrain-deep); border-radius:2px; padding:.24rem .5rem}
+
+  /* projects */
+  .projects{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem}
+  @media (max-width:720px){.projects{grid-template-columns:1fr}}
+  .project{
+    display:block; text-decoration:none; background:var(--ink-2); border:1px solid var(--line); border-radius:3px;
+    padding:1.4rem 1.5rem; transition:border-color .25s, transform .25s, background .25s; position:relative; overflow:hidden;
+  }
+  .project::after{content:"↗"; position:absolute; top:1.2rem; right:1.3rem; color:var(--paper-faint); font-size:1rem; transition:color .25s, transform .25s}
+  .project:hover{border-color:var(--gold); transform:translateY(-3px); background:var(--ink-3)}
+  .project:hover::after{color:var(--gold); transform:translate(2px,-2px)}
+  .project .kind{display:flex; align-items:center; gap:.6rem; font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:.9rem}
+  .project .kind svg{width:1.15rem;height:1.15rem;flex:none;stroke:var(--gold);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .project h3{font-family:var(--display); font-weight:500; font-size:1.18rem; line-height:1.24; color:var(--paper); margin-bottom:.55rem; padding-right:1.5rem}
+  .project h3 em{font-style:italic}
+  .project p{color:var(--paper-dim); font-size:.92rem; max-width:40ch}
+  .project .meta{margin-top:1rem; font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--paper-faint)}
+
+  /* writing / publications */
+  .pubgroup{margin-top:2.4rem}
+  .pubgroup:first-of-type{margin-top:0}
+  .pubgroup > .lbl{display:flex; align-items:baseline; gap:.8rem; margin-bottom:1.1rem}
+  .pubgroup > .lbl .status{font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold)}
+  .pubgroup > .lbl .count{font-family:var(--mono); font-size:.68rem; color:var(--paper-faint)}
+  .pubgroup > .lbl .rule{flex:1; height:1px; background:var(--line)}
+  .pub{display:grid; grid-template-columns:4.5rem 1fr; gap:1.2rem; padding:1.05rem 0; border-bottom:1px solid var(--line); align-items:start}
+  .pub .yr{font-family:var(--mono); font-size:.8rem; color:var(--terrain); padding-top:.15rem}
+  .pub .body .t{color:var(--paper); font-size:1rem; line-height:1.4}
+  .pub .body .t b{color:var(--gold); font-weight:600}
+  .pub .body .src{margin-top:.35rem; font-size:.9rem; color:var(--paper-dim)}
+  .pub .body .src i{font-style:italic}
+  .pub .body a.doi{display:inline-block; margin-top:.4rem; font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; color:var(--paper-faint); text-decoration:none; border-bottom:1px solid var(--line); transition:color .2s,border-color .2s}
+  .pub .body a.doi:hover{color:var(--gold); border-color:var(--gold)}
+  @media (max-width:480px){.pub{grid-template-columns:1fr; gap:.25rem}}
+  .morelink{margin-top:2rem}
+
+  /* contact */
+  .contact .wrap{display:grid; grid-template-columns:1fr auto; gap:2rem; align-items:end}
+  @media (max-width:720px){.contact .wrap{grid-template-columns:1fr; align-items:start}}
+  .contact h2{margin-bottom:1rem}
+  .contact .lede{color:var(--paper-dim); max-width:34ch; font-size:1.05rem}
+  .contact .out{display:flex; flex-direction:column; gap:.5rem}
+  .contact .out a{font-family:var(--mono); font-size:.82rem; letter-spacing:.06em; color:var(--paper); text-decoration:none; display:flex; align-items:center; gap:.7rem; transition:color .2s}
+  .contact .out a:hover{color:var(--gold)}
+  .contact .out a .k{color:var(--paper-faint); text-transform:uppercase; letter-spacing:.12em; font-size:.66rem; width:5rem}
+
+  footer{border-top:1px solid var(--line); padding:2rem 0 3rem}
+  footer .wrap{display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; align-items:center}
+  footer .colophon{font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--paper-faint); max-width:52ch; line-height:1.7}
+  footer .colophon b{color:var(--paper-dim); font-weight:400}
+  footer .totop{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); text-decoration:none; display:inline-flex; align-items:center; gap:.5rem}
+
+  /* reveal on scroll */
+  .rise{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease}
+  .rise.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion:reduce){.rise{opacity:1; transform:none; transition:none}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Ian A. Pshea-Smith</h1>
-            <p class="subtitle">Spatial Epidemiologist & Vector Ecologist</p>
-        </header>
-        <div class="main-content">
-            <div class="bio">
-                <p>I am a Vector Ecologist trained in Medical Geography and Global Health Epidemiology. I investigate how environmental conditions shape vector ecologies, and how that can be related to public health and spatial patterns of risk. My research integrates geography, community ecology, and public health to understand how complex factors like climate change influence mosquito and tick ecology.</p>
-            </div>
-        </div>
-        <div class="links-section">
-            <a href="https://ianpsheasmith.github.io/CV.html" target="_blank" rel="noopener noreferrer" class="link-card">
-                <h3>Curriculum Vitae</h3>
-            </a>
-            <a href="https://scholar.google.com/citations?user=PGhcI0AAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener noreferrer" class="link-card">
-                <h3>Google Scholar</h3>
-            </a>
-            <a href="https://www.linkedin.com/in/ianpsheasmith/" target="_blank" rel="noopener noreferrer" class="link-card">
-                <h3>LinkedIn</h3>
-            </a>
-            <a href="https://www.smileylab.org/team/" target="_blank" rel="noopener noreferrer" class="link-card">
-                <h3>Institutional Profile</h3>
-            </a>
-        </div>
-          <div class="projects-section">
-              <h2>Research Projects</h2>
-              <a href="https://ianpsheasmith.github.io/Haiti_MosqAbundanceStudy/" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <h3>Monthly Abundance Maps of Vector Mosquitoes in Haiti</h3>
-                  <p>Interactive spatiotemporal modeling of six mosquito vector species across Haiti.</p>
-              </a>
-              <a href="https://ianpsheasmith.github.io/HaitiAeaeENM/" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <h3>Modeling the Distribution of <em>Aedes aegypti</em> in Haiti under Climate Change</h3>
-                  <p>Predicting population risks of exposure to <em>Aedes aegypti</em> in Haiti using risk dashboards and predictions under four warming regimes.</p>
-              </a>
-              <a href="Assemblage/" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <h3>A Vulnerabilising Assemblage in the Context of Infectious Disease in Haiti</h3>
-                  <p>Characterising Climate Change, Colonisation, Conflict & Corruption as a Vulnerabilising Assemblage in the Context of Infectious Disease in Haiti.</p>
-              </a>
-              <a href="Keratitis/" target="_blank" rel="noopener noreferrer" class="project-link">
-                  <h3>Keratitis & Corneal Disease</h3>
-                  <p>Describing corneal donation and keratitis through a literature review and through geospatial modelling.</p>
-              </a>
-          </div>
-        <footer>
-            <p>ianpsheasmith@gmail.com</p>
-            <p>github.com/IanPsheaSmith</p>            
-        </footer>
+
+<div class="rail">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0">
+    <span class="id"><b>Ian A. Pshea-Smith</b> · PhD, MPH</span>
+    <nav>
+      <a href="#position">Position</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <div class="station rise in">
+      <span class="dot"></span>
+      <span>37.8715&deg; N &nbsp;122.2730&deg; W &nbsp;·&nbsp; <b>Berkeley, California</b></span>
     </div>
-    <!-- Parallax Scroll Effect -->
-    <script>
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const header = document.querySelector('header');
-        const mainContent = document.querySelector('.main-content');
-        const linksSection = document.querySelector('.links-section');
-        const projectsSection = document.querySelector('.projects-section');
-        if (header) header.style.transform = `translateY(${scrolled * 0.4}px)`;
-        if (mainContent) mainContent.style.transform = `translateY(${scrolled * 0.25}px)`;
-        if (linksSection) linksSection.style.transform = `translateY(${scrolled * 0.15}px)`;
-        if (projectsSection) projectsSection.style.transform = `translateY(${scrolled * 0.1}px)`;
+
+    <div class="namemark rise in">
+      <div class="ln1"><img src="assets/name-ian.png" alt="Ian"></div>
+      <div class="ln2">
+        <img src="assets/name-pshea.png" alt="Pshea">
+        <span class="hyph" aria-hidden="true"></span>
+        <img src="assets/name-smith.png" alt="Smith">
+      </div>
+    </div>
+
+    <p class="thesis rise">Medical geographer &amp; vector ecologist, mapping how environmental conditions alter the <em>geography of disease</em>.</p>
+
+    <div class="links rise">
+      <a class="chip solid" href="https://ianpsheasmith.github.io/CV.html">
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        Curriculum Vitae
+      </a>
+      <a class="chip" href="https://scholar.google.com/citations?user=PGhcI0AAAAAJ&hl=en">
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        Google Scholar
+      </a>
+      <a class="chip" href="https://github.com/IanPsheaSmith">
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        GitHub
+      </a>
+      <a class="chip" href="https://www.linkedin.com/in/ianpsheasmith/">
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        LinkedIn
+      </a>
+      <a class="chip" href="mailto:ianpsheasmith@gmail.com">
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ POSITION ============ -->
+<section id="position">
+  <div class="wrap">
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 01 · Position</span>
+    <div class="position">
+      <div class="bio rise">
+        <p>I study how environmental change reshapes the geography of vector-borne and zoonotic disease. As a postdoctoral researcher in the <b>Smiley Evans Lab</b> at <b>UC Berkeley</b>, I model where vectors, pathogens, and spillover risk are likely to occur, and how climate, global environmental change, and social vulnerability move those boundaries.</p>
+        <p>My work joins <b>geography, community ecology, and public health</b>, translating ecological theory into maps and public health outputs meant to inform decisions. Before Berkeley I completed a PhD in Medical Geography &amp; Global Health at the University of Florida, with foci on Haiti and the Republic of Georgia.</p>
+        <dl class="facts">
+          <div class="row"><dt>Role</dt><dd>Postdoctoral Researcher &mdash; Smiley Evans Lab (A.P.E. Health Group), UC Berkeley</dd></div>
+          <div class="row"><dt>Based</dt><dd>Berkeley / East Bay, California</dd></div>
+          <div class="row"><dt>Training</dt><dd>PhD, Medical Geography &amp; Global Health (Florida) · MPH, Global Health Epidemiology (Michigan)</dd></div>
+          <div class="row"><dt>Focus</dt><dd>Vector-borne &amp; zoonotic disease · species distribution modeling · spatial risk mapping</dd></div>
+          <div class="row"><dt>Regions</dt><dd>East &amp; Central Africa · Haiti · Republic of Georgia · Ecuador</dd></div>
+          <div class="row"><dt>Toolkit</dt><dd>R · Machine Learning &amp; ensemble SDMs · multi &amp; joint SDMs · index construction</dd></div>
+        </dl>
+      </div>
+      <figure class="portrait rise">
+        <img src="assets/headshot.jpg" alt="Portrait of Ian A. Pshea-Smith">
+        <figcaption><span>Ian A. Pshea-Smith</span><span>PhD · MPH</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research">
+  <div class="wrap">
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 02 · Research</span>
+    <div class="themes rise">
+      <div class="theme">
+        <span class="ix">A</span>
+        <h3>Vector ecology &amp; distribution modeling</h3>
+        <p>Where do mosquitoes and ticks live now, and where will they live as the climate shifts? <em>Aedes</em> across Haiti; <em>Ixodes</em> and <em>Dermacentor</em> in the Republic of Georgia.</p>
+        <div class="tags"><span class="tag">BRT</span><span class="tag">MaxEnt</span><span class="tag">Ensemble SDM</span><span class="tag">Spatial CV</span><span class="tag">CMIP6</span></div>
+      </div>
+      <div class="theme">
+        <span class="ix">B</span>
+        <h3>Zoonotic emergence &amp; land change</h3>
+        <p>Connecting ecology to spillover risk, reading the landscape for where future emergence is likely.</p>
+        <div class="tags"><span class="tag">Spillover</span><span class="tag">One Health</span><span class="tag">Land cover</span><span class="tag">WorldCover</span></div>
+      </div>
+      <div class="theme">
+        <span class="ix">C</span>
+        <h3>Multi-pathogen risk mapping</h3>
+        <p>Building multi-vector, multi-pathogen spatial risk frameworks across regions, bringing zoonotic and vector-borne threats into one comparable surface.</p>
+        <div class="tags"><span class="tag">CCHF</span><span class="tag">Rift Valley fever</span><span class="tag">Dengue</span><span class="tag">Zika</span></div>
+      </div>
+      <div class="theme">
+        <span class="ix">D</span>
+        <h3>Health geography &amp; vulnerability</h3>
+        <p>How structural forces compound into risk: climate, colonisation, conflict &amp; corruption as a vulnerabilising assemblage, plus corneal disease and social vulnerability.</p>
+        <div class="tags"><span class="tag">Assemblage</span><span class="tag">Social vulnerability</span><span class="tag">Medical geography</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects">
+  <div class="wrap">
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 03 · Projects</span>
+    <h2 class="rise">Interactive project pages</h2>
+    <div class="projects">
+      <a class="project rise" href="https://ianpsheasmith.github.io/Haiti_MosqAbundanceStudy/">
+        <span class="kind"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 8l7 4 7-4M4 15l8-3 8 3"/></svg>Spatiotemporal · Haiti</span>
+        <h3>Monthly abundance maps of vector mosquitoes in Haiti</h3>
+        <p>Interactive month-by-month modeling of vector mosquito distributions across the Ouest Department. <span style="color:var(--terrain)">Published in <i>Am. J. Trop. Med. Hyg.</i></span></p>
+        <div class="meta">Surveillance modeling · AJTMH 2026</div>
+      </a>
+      <a class="project rise" href="https://ianpsheasmith.github.io/HaitiAeaeENM/">
+        <span class="kind"><svg viewBox="0 0 24 24"><path d="M3 17c3-6 5-9 9-9s6 3 9 9M8 8a4 4 0 1 1 8 0"/></svg>SDM · Climate</span>
+        <h3>Modeling <em>Aedes aegypti</em> in Haiti under climate change</h3>
+        <p>Population exposure risk for <em>Aedes aegypti</em> under four warming regimes, with prediction dashboards.</p>
+        <div class="meta">4 SSP scenarios · risk dashboard</div>
+      </a>
+      <a class="project rise" href="Georgia_Ticks/">
+        <span class="kind"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="5"/><path d="M12 4v3M7 7 5 5M17 7l2-2"/></svg>Ecology · Georgia</span>
+        <h3>Tick ecology in the Republic of Georgia</h3>
+        <p>Ten years of surveillance mapped into distribution models and an interactive vector-borne disease risk assessment.</p>
+        <div class="meta">10-yr surveillance · interactive map</div>
+      </a>
+      <a class="project rise" href="Assemblage/">
+        <span class="kind"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="18" r="2.4"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8"/></svg>Health geography · Haiti</span>
+        <h3>A vulnerabilising assemblage in Haiti</h3>
+        <p>Climate change, colonisation, conflict &amp; corruption as an assemblage driving infectious-disease risk. <span style="color:var(--terrain)">Published in <i>Geoforum</i>.</span></p>
+        <div class="meta">Geoforum 174 · 2026</div>
+      </a>
+      <a class="project rise" href="Keratitis/">
+        <span class="kind"><svg viewBox="0 0 24 24"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/></svg>Epidemiology · USA</span>
+        <h3>Keratitis &amp; corneal disease</h3>
+        <p>Corneal donation attitudes and the geography of keratitis, through literature review and geospatial modeling.</p>
+        <div class="meta">Review + spatial analysis</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WRITING ============ -->
+<section id="writing">
+  <div class="wrap">
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 04 · Writing</span>
+    <h2 class="rise">Selected publications</h2>
+
+    <div class="pubgroup rise">
+      <div class="lbl"><span class="status">Published &amp; accepted</span><span class="rule"></span><span class="count">6 works</span></div>
+
+      <div class="pub">
+        <span class="yr">2026</span>
+        <div class="body">
+          <div class="t">Bashshur R, Werner E, <b>Pshea-Smith IA</b>, Dunn M. Prevalence and geographic distribution of keratitis in the United States and associated factors.</div>
+          <div class="src"><i>Next Research</i> &mdash; accepted.</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">2026</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Bissainte D, Ash KD. Characterising climate change, colonisation, conflict &amp; corruption as a vulnerabilising assemblage in the context of infectious disease in Haiti.</div>
+          <div class="src"><i>Geoforum</i> 174:104683.</div>
+          <a class="doi" href="https://doi.org/10.1016/j.geoforum.2026.104683">doi.org/10.1016/j.geoforum.2026.104683</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">2026</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Okech B, So J, Boncy J, Sutherland I, Hamilton T, Dunford J, Blanton J, Existe A, Rudolph FJ, Matulis GA, Ponciano JM, Koehler JW, Blackburn JK, von Fricken ME. Modeling and predicting counts and environmental correlates of mosquito distributions in Haiti using surveillance data from the Ouest Department.</div>
+          <div class="src"><i>American Journal of Tropical Medicine &amp; Hygiene</i>. 2026 May 12:tpmd250324.</div>
+          <a class="doi" href="https://doi.org/10.4269/ajtmh.25-0324">doi.org/10.4269/ajtmh.25-0324</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">2026</span>
+        <div class="body">
+          <div class="t">Matulis GA, Smith HP, Hall G, Katich RS, Delp KL, Douglas CE, Williams J, Hirsch S, Kumar R, <b>Pshea-Smith IA</b>, Lilak AA, Okech BA, Ricks K, Stefan CP, Existe A, Kugelman JR, Sutherland I, Dunford J, Boncy J, von Fricken ME, Koehler JW. Characterization of arbovirus infections in patients within Haiti by screening discarded malaria rapid diagnostic test cassettes.</div>
+          <div class="src"><i>PLoS Neglected Tropical Diseases</i>. 2026 Mar;20:1&ndash;13.</div>
+          <a class="doi" href="https://doi.org/10.1371/journal.pntd.0014089">doi.org/10.1371/journal.pntd.0014089</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">2026</span>
+        <div class="body">
+          <div class="t">Motes J, Wilson B, <b>Pshea-Smith IA</b>, Matulis GA, Bird JT, So J, Boncy J, Sutherland IW, Hamilton T, Dunford J, Scime S, Tarigopula N, Minard-Smith A, Existe A, Koehler JW, Okech BA, von Fricken ME, Blanton J. Molecular detection of insecticide resistance markers in <i>Aedes aegypti</i> (Diptera: Culicidae) populations from Haiti.</div>
+          <div class="src"><i>Journal of Medical Entomology</i>. 2026 Jan;63(1):tjaf195.</div>
+          <a class="doi" href="https://doi.org/10.1093/jme/tjaf195">doi.org/10.1093/jme/tjaf195</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">2024</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Bashshur M, Itani W, Mofrad ZN, Stout E, Bashshur R. Perceptions on corneal and eye donation: implications for corneal donor programs.</div>
+          <div class="src"><i>Eye Banking and Corneal Transplantation</i>. 2024 Sep 1;3(3):e0029.</div>
+          <a class="doi" href="https://doi.org/10.1097/ebct.0000000000000029">doi.org/10.1097/ebct.0000000000000029</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pubgroup rise">
+      <div class="lbl"><span class="status">Under review</span><span class="rule"></span><span class="count">6 works</span></div>
+
+      <div class="pub">
+        <span class="yr">&mdash;</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Matulis GA, Metrailer MC, Okech B, So J, Boncy J, Sutherland I, Hamilton T, Dunford J, Blanton J, Existe A, Koehler JW, Blackburn JK, von Fricken ME. Mosquito community ecology in a pathogen-endemic setting in Haiti.</div>
+          <div class="src"><i>Parasites &amp; Vectors</i>.</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">&mdash;</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Okech B, Sutherland I, Dunford J, So J, Boncy J, Existe A, Punch B, Matulis GA, Koehler JW, Blackburn JK, von Fricken ME. The increasing suitability of <i>Aedes aegypti</i> in Haiti under climate change is an issue of global health equity.</div>
+          <div class="src"><i>Journal of Climate Change &amp; Health</i>.</div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">&mdash;</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Ponce P, Cevallos V, Carrazco A, Morrison AC, Coloma J, Eisenberg JNS. Landing patterns of <i>Aedes aegypti</i> &amp; <i>Culex quinquefasciatus</i> in northern Esmeraldas province, Ecuador: Human Landing Catch Study, June 2021 &ndash; July 2022.</div>
+          <div class="src"><i>Journal of the American Mosquito Control Association</i>.</div>
+          <a class="doi" href="https://doi.org/10.1101/2025.03.12.25323448">Preprint &middot; doi.org/10.1101/2025.03.12.25323448</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">&mdash;</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Kotorashvili A, Kotaria N, Golubiani G, Kirkitadze G, Chunashvili T, Shubashishvili A, Di Paola N, Kugelman J, Hulseberg C, Walker B, Musich T, Cleary N, Metrailer MC, Blanton J, Lynn J, Reinbold-Wasson D, Denlinger DS, Blackburn JK, von Fricken ME. An ecological analysis of ticks in the country of Georgia.</div>
+          <div class="src"><i>Ticks and Tick-borne Diseases</i>.</div>
+          <a class="doi" href="https://doi.org/10.2139/ssrn.6551591">Preprint &middot; doi.org/10.2139/ssrn.6551591</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">&mdash;</span>
+        <div class="body">
+          <div class="t">Cleary N, Fiorenzano J, Boldbaatar B, <b>Pshea-Smith IA</b>, Altantogtokh D, Lindroth EJ, Davidson S, Poole-Smith BK, Hertz J, Amgalanbayar B, Etobayeva I, Salyer AR, Letizia AG, Ryan SJ, von Fricken ME. Modeling the distributions of <i>Dermacentor nuttalli</i>, <i>Ixodes persulcatus</i>, and <i>Hyalomma asiaticum</i> in Mongolia from 2019&ndash;2024.</div>
+          <div class="src"><i>Ticks and Tick-borne Diseases</i>.</div>
+          <a class="doi" href="https://doi.org/10.2139/ssrn.6327699">Preprint &middot; doi.org/10.2139/ssrn.6327699</a>
+        </div>
+      </div>
+
+      <div class="pub">
+        <span class="yr">&mdash;</span>
+        <div class="body">
+          <div class="t">Matulis GA, Smith HP, So J, Hamilton T, Katich RS, Kour N, Delp KL, Douglas CE, <b>Pshea-Smith IA</b>, Lilak AA, Okech B, Blanton J, Existe A, Sutherland I, Stefan CP, Ricks K, Dunford J, Boncy J, Koehler JW, von Fricken ME. Surveillance of <i>Pfhrp2/Pfhrp3</i> deletions in <i>Plasmodium falciparum</i> within Haiti, 2021&ndash;2023, using RDTs.</div>
+          <div class="src"><i>Malaria Journal</i>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pubgroup rise">
+      <div class="lbl"><span class="status">In preparation</span><span class="rule"></span></div>
+      <div class="pub">
+        <span class="yr">&mdash;</span>
+        <div class="body">
+          <div class="t"><b>Pshea-Smith IA</b>, Ash KD, Bashshur R. The geography of keratitis in Florida and its correlation with social vulnerability.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="links morelink rise">
+      <a class="chip" href="https://scholar.google.com/citations?user=PGhcI0AAAAAJ&hl=en">
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        Full list on Google Scholar
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 05 · Contact</span>
+      <h2 class="rise">Get in touch</h2>
+      <p class="lede rise">I'm always open to collaboration!</p>
+    </div>
+    <div class="out rise">
+      <a href="mailto:ianpsheasmith@gmail.com"><span class="k">Email</span> ianpsheasmith@gmail.com</a>
+      <a href="https://github.com/IanPsheaSmith"><span class="k">GitHub</span> github.com/IanPsheaSmith</a>
+      <a href="https://scholar.google.com/citations?user=PGhcI0AAAAAJ&hl=en"><span class="k">Scholar</span> Google Scholar profile</a>
+      <a href="https://www.linkedin.com/in/ianpsheasmith/"><span class="k">LinkedIn</span> in/ianpsheasmith</a>
+      <a href="https://www.smileylab.org/"><span class="k">Lab</span> smileylab.org</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="colophon">
+      Ian A. Pshea-Smith &mdash; Medical Geographer &amp; Vector Ecologist<br>
+      <b>Static site built in HTML/CSS in collaboration with Claude.ai, hosted on GitHub Pages. Name set in Landsat imagery via "Your Name in Landsat." Type: Fraunces, Public Sans, IBM Plex Mono.</b>
+    </p>
+    <a class="totop" href="#top">
+      <svg class="reg" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="7" fill="none" stroke="var(--gold)" stroke-width="1.4"/><line x1="12" y1="1" x2="12" y2="23" stroke="var(--gold)" stroke-width="1.4"/><line x1="1" y1="12" x2="23" y2="12" stroke="var(--gold)" stroke-width="1.4"/></svg>
+      Back to top
+    </a>
+  </div>
+</footer>
+
+<span id="top" style="position:absolute;top:0"></span>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rise:not(.in)').forEach(el=>io.observe(el));
+
+  // active section in rail
+  const rail = document.querySelectorAll('.rail nav a');
+  const secs = [...rail].map(a=>document.querySelector(a.getAttribute('href')));
+  const so = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id = '#'+e.target.id;
+        rail.forEach(a=>a.style.color = a.getAttribute('href')===id ? 'var(--gold)' : '');
+      }
     });
-    </script>
+  }, {threshold:0.4});
+  secs.forEach(s=>s && so.observe(s));
+</script>
 </body>
 </html>
