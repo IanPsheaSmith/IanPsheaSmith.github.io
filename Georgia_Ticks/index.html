@@ -178,9 +178,8 @@
       <div class="ends"><span>Low</span><span>Viridis &middot; predicted probability</span><span>High</span></div>
     </div>
     <div class="actions rise">
-      <a class="btn solid" href="risk_map_interactive.html"><span class="d"></span>Interactive risk map</a>
+      <a class="btn solid" href="https://doi.org/10.2139/ssrn.6551591"><span class="d"></span>Read the preprint</a>
       <a class="btn" href="https://github.com/IanPsheaSmith/GeorgiaTickDist"><span class="d"></span>Data &amp; code</a>
-      <a class="btn" href="https://doi.org/10.2139/ssrn.6551591"><span class="d"></span>Preprint</a>
     </div>
   </div>
 </header>
@@ -225,7 +224,7 @@
     <p class="rise">Every species co-occurred with at least one other, and nine species pairs co-occurred significantly more than chance (Veech model) &mdash; <b>all positive, none negative</b>. The tightest pairing was <span class="sci">D. marginatus</span> with <span class="sci">Ha. punctata</span> (14 shared sites). The absence of negative associations suggests competitive exclusion is limited, with environmental filtering and shared habitat likely shaping community assembly.</p>
 
     <h3 class="rise">Overlapping distributions</h3>
-    <p class="rise">Six species with sufficient records (&ge;30) were modelled with boosted regression trees. All performed well (AUC and TSS &gt; 0.75 across 100 replicates each), with <b>soil organic carbon and annual temperature</b> the most influential predictors. Suitability peaked in central and southeastern Georgia, and distributions overlapped strongly (mean Sørensen's coefficient = 0.61; up to 0.95 between the two <span class="sci">Dermacentor</span> species) &mdash; ground suitable for one vector often suits several.</p>
+    <p class="rise">Six species with sufficient records (&ge;30 after thinning) were modelled with boosted regression trees. All performed well (mean AUC and TSS &gt; 0.75 across 100 replicates each), with <b>soil organic carbon</b>, temperature, and landscape heterogeneity the most influential predictors and land-cover type the least. Suitability peaked in central and southeastern Georgia &mdash; roughly a third of the landscape &mdash; and distributions overlapped strongly (mean Sørensen's coefficient = 0.61, up to 0.95 between the two <span class="sci">Dermacentor</span> species and 0.36 at its lowest, between <span class="sci">I. ricinus</span> and <span class="sci">Ha. parva</span>). Ground suitable for one vector often suits several.</p>
 
     <div class="tbl-scroll rise">
       <table class="tbl">
@@ -252,38 +251,43 @@
 
     <div class="plates">
       <figure class="plate wide rise">
-        <div class="mount"><img src="assets/fig1-collection.jpg" alt="Temporal and spatial structure of tick collection data across Georgia"></div>
-        <figcaption><span class="pl-tag">Fig. 1 — Collection structure</span>Temporal and spatial structure of the collection data. (A) Annual sampling effort and species richness, 2013&ndash;2023. (B) Monthly phenology of records. (C) Total records per species, coloured by genus. (D) Spatial distribution of records with a tick-weighted kernel density estimate (yellow-green = denser sampling).</figcaption>
+        <div class="mount"><img src="assets/fig1-kde.jpg" alt="Spatial distribution of tick collection records across Georgia with a kernel density estimate"></div>
+        <figcaption><span class="pl-tag">Fig. 1 — Spatial distribution</span>Collection records across Georgia for all species combined, over a tick-count-weighted kernel density estimate (yellow-green = denser collection). Sampling clusters in the central and southeastern lowlands; the inset locates Georgia among Russia, Türkiye, Armenia, and Azerbaijan.</figcaption>
       </figure>
 
       <figure class="plate rise">
-        <div class="mount"><img src="assets/fig2-bioregions.jpg" alt="Bioregionalization map of Georgia with tick collection clusters"></div>
-        <figcaption><span class="pl-tag">Fig. 2 — Bioregions</span>Three bioregions from ClustGeo spatially-constrained hierarchical clustering over the 25 site clusters. Points are graduated by the number of unique species recorded.</figcaption>
+        <div class="mount"><img src="assets/fig2-records.jpg" alt="Bar plot of presence-record counts per tick species with a log-rank curve and genus summary"></div>
+        <figcaption><span class="pl-tag">Fig. 2 — Presence records</span>Count of presence records per species (bars) with a log-rank pattern (curve), coloured by genus. <span class="sci">Ixodes ricinus</span> (124), <span class="sci">Ha. punctata</span> (118), and <span class="sci">D. marginatus</span> (105) lead; the inset tallies 21 species across five genera and 720 records.</figcaption>
       </figure>
 
       <figure class="plate rise">
-        <div class="mount"><img src="assets/fig3-cooccurrence.jpg" alt="Species co-occurrence networks"></div>
-        <figcaption><span class="pl-tag">Fig. 3 — Co-occurrence</span>Co-occurrence networks. (A) Counts of shared clusters for every species pair. (B) Statistically significant positive co-occurrences (Veech model); node size/colour = clusters occupied, edge width = shared sites.</figcaption>
+        <div class="mount"><img src="assets/fig3-bioregions.jpg" alt="Bioregion map of Georgia defined by combined spatial and environmental clustering"></div>
+        <figcaption><span class="pl-tag">Fig. 3 — Bioregions</span>Three bioregions of Georgia from <span class="sci">ClustGeo</span> spatially-constrained hierarchical clustering (combined spatial and environmental matrices). Cluster points are graduated by the number of unique species recorded.</figcaption>
+      </figure>
+
+      <figure class="plate rise">
+        <div class="mount"><img src="assets/fig4-cooccurrence-count.jpg" alt="Count co-occurrence network among tick species across the 25 k-means clusters"></div>
+        <figcaption><span class="pl-tag">Fig. 4 — Co-occurrence (counts)</span>Count co-occurrence network: how often each species pair occurred together across the 25 k-means clusters. Node size/colour = clusters a species occupied; edge width = shared sites. Every species co-occurred with at least one other.</figcaption>
+      </figure>
+
+      <figure class="plate rise">
+        <div class="mount"><img src="assets/fig5-cooccurrence-signif.jpg" alt="Statistically significant positive co-occurrence network among nine tick species"></div>
+        <figcaption><span class="pl-tag">Fig. 5 — Co-occurrence (significant)</span>The nine statistically significant co-occurrences (Veech model, p &lt; 0.05) among nine species &mdash; all positive, none negative. The strongest pairing was <span class="sci">D. marginatus</span> with <span class="sci">Ha. punctata</span> (14 shared sites).</figcaption>
       </figure>
 
       <figure class="plate wide rise">
-        <div class="mount"><img src="assets/fig5-sdm.jpg" alt="Species distribution maps for six tick species in Georgia"></div>
-        <figcaption><span class="pl-tag">Fig. 5 — Distribution models</span>Predicted distributions for (A) <span class="sci">Dermacentor marginatus</span>, (B) <span class="sci">D. reticulatus</span>, (C) <span class="sci">Haemaphysalis inermis</span>, (D) <span class="sci">Ha. parva</span>, (E) <span class="sci">Ha. punctata</span>, and (F) <span class="sci">Ixodes ricinus</span>. Mean predicted probability across 100 iterations (yellow = higher, blue = lower).</figcaption>
+        <div class="mount"><img src="assets/fig6-sdm.jpg" alt="Predicted distribution maps for the tick species with more than 30 occurrence records"></div>
+        <figcaption><span class="pl-tag">Fig. 6 — Distribution models</span>Boosted-regression-tree predicted distributions for the tick species with more than 30 occurrence records, with occurrence points overlaid. Viridis shows probability of presence (yellow &asymp; 0.99, purple &asymp; 0). Suitability peaks in central and southeastern Georgia.</figcaption>
       </figure>
 
       <figure class="plate rise">
-        <div class="mount"><img src="assets/fig4-influence.jpg" alt="Variable relative influence plots"></div>
-        <figcaption><span class="pl-tag">Fig. 4 — Variable influence</span>Relative-influence plots per species, ordered by mean influence. Soil organic carbon, annual temperature, and soil nitrogen led; land-cover type contributed least.</figcaption>
+        <div class="mount"><img src="assets/supp1-cooccurrence-heatmap.jpg" alt="Species co-occurrence heatmap of shared-cluster counts"></div>
+        <figcaption><span class="pl-tag">Suppl. Fig. 1 — Co-occurrence heatmap</span>The full co-occurrence matrix: counts of shared clusters for every species pair across the 25 k-means sites.</figcaption>
       </figure>
 
       <figure class="plate rise">
-        <div class="mount"><img src="assets/supp2-sorensen.jpg" alt="Sorensen coefficient similarity matrix between species distributions"></div>
-        <figcaption><span class="pl-tag">Suppl. Fig. 2 — Range overlap</span>Sørensen's coefficient between species pairs' thresholded distributions. Values near one indicate near-identical predicted ranges &mdash; the two <span class="sci">Dermacentor</span> species reached 0.95.</figcaption>
-      </figure>
-
-      <figure class="plate rise">
-        <div class="mount"><img src="assets/supp1-heatmap.jpg" alt="Species co-occurrence heatmap"></div>
-        <figcaption><span class="pl-tag">Suppl. Fig. 1 — Co-occurrence heatmap</span>Full heatmap of shared-cluster counts for each species pair across the 25 sites (blue = higher, green = lower).</figcaption>
+        <div class="mount"><img src="assets/supp2-overlap.jpg" alt="Distribution overlap matrices: Schoener's D, Warren's I, Pearson and Spearman correlation between modelled species"></div>
+        <figcaption><span class="pl-tag">Suppl. Fig. 2 — Distribution overlap</span>Pairwise overlap between the modelled species' predicted distributions: (A) Schoener's <i>D</i>, (B) Warren's <i>I</i>, (C) Pearson and (D) Spearman correlation. High values throughout confirm strongly overlapping ranges.</figcaption>
       </figure>
     </div>
   </div>
