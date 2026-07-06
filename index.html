@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ian A. Pshea-Smith — Medical Geographer & Vector Ecologist</title>
 <meta name="description" content="Ian A. Pshea-Smith, PhD, MPH — medical geographer and vector ecologist at the Smiley Evans Lab, UC Berkeley. Species distribution modeling, zoonotic spillover, and spatial risk mapping of vector-borne disease.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e1512'/%3E%3Cg stroke='%23d4af37' stroke-width='1.5' fill='none'%3E%3Ccircle cx='16' cy='16' r='7'/%3E%3Cline x1='16' y1='2' x2='16' y2='30'/%3E%3Cline x1='2' y1='16' x2='30' y2='16'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230e1512'/%3E%3Cg stroke='%23d4af37' stroke-width='1.5' fill='none'%3E%3Ccircle cx='16' cy='16' r='11'/%3E%3Cellipse cx='16' cy='16' rx='5' ry='11'/%3E%3Cline x1='5' y1='16' x2='27' y2='16'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -62,7 +62,7 @@
     color:var(--gold); display:inline-flex; align-items:center; gap:.6rem; margin-bottom:1.4rem;
   }
   .eyebrow .reg{width:.85rem;height:.85rem;flex:none}
-  .reg circle,.reg line{stroke:currentColor; fill:none; stroke-width:1.4}
+  .reg circle,.reg line,.reg ellipse{stroke:currentColor; fill:none; stroke-width:1.4}
 
   h2{font-family:var(--display); font-weight:500; font-size:clamp(1.7rem,3.6vw,2.5rem); line-height:1.1; letter-spacing:-.01em}
   section > .wrap > h2{margin-bottom:1.6rem}
@@ -110,10 +110,10 @@
     background:var(--ink-2); transition:border-color .2s, color .2s, transform .2s, background .2s;
   }
   .chip svg{width:.8rem;height:.8rem}
-  .chip .reg circle,.chip .reg line{stroke:var(--gold)}
+  .chip .reg circle,.chip .reg line,.chip .reg ellipse{stroke:var(--gold)}
   .chip:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-2px)}
   .chip.solid{background:var(--gold); color:var(--ink); border-color:var(--gold)}
-  .chip.solid .reg circle,.chip.solid .reg line{stroke:var(--ink)}
+  .chip.solid .reg circle,.chip.solid .reg line,.chip.solid .reg ellipse{stroke:var(--ink)}
   .chip.solid:hover{background:var(--gold-deep); color:var(--ink); border-color:var(--gold-deep)}
 
   /* ---------- generic section rhythm ---------- */
@@ -239,23 +239,23 @@
 
     <div class="links rise">
       <a class="chip solid" href="https://ianpsheasmith.github.io/CV.html">
-        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
         Curriculum Vitae
       </a>
       <a class="chip" href="https://scholar.google.com/citations?user=PGhcI0AAAAAJ&hl=en">
-        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
         Google Scholar
       </a>
       <a class="chip" href="https://github.com/IanPsheaSmith">
-        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
         GitHub
       </a>
       <a class="chip" href="https://www.linkedin.com/in/ianpsheasmith/">
-        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
         LinkedIn
       </a>
       <a class="chip" href="mailto:ianpsheasmith@gmail.com">
-        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
         Email
       </a>
     </div>
@@ -265,7 +265,7 @@
 <!-- ============ POSITION ============ -->
 <section id="position">
   <div class="wrap">
-    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 01 · Position</span>
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>Layer 01 · Position</span>
     <div class="position">
       <div class="bio rise">
         <p>I study how environmental change reshapes the geography of vector-borne and zoonotic disease. As a postdoctoral researcher in the <b>Smiley Evans Lab</b> at <b>UC Berkeley</b>, I model where vectors, pathogens, and spillover risk are likely to occur, and how climate, global environmental change, and social vulnerability move those boundaries.</p>
@@ -290,7 +290,7 @@
 <!-- ============ RESEARCH ============ -->
 <section id="research">
   <div class="wrap">
-    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 02 · Research</span>
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>Layer 02 · Research</span>
     <div class="themes rise">
       <div class="theme">
         <span class="ix">A</span>
@@ -323,7 +323,7 @@
 <!-- ============ PROJECTS ============ -->
 <section id="projects">
   <div class="wrap">
-    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 03 · Projects</span>
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>Layer 03 · Projects</span>
     <h2 class="rise">Interactive project pages</h2>
     <div class="projects">
       <a class="project rise" href="https://ianpsheasmith.github.io/Haiti_MosqAbundanceStudy/">
@@ -363,7 +363,7 @@
 <!-- ============ WRITING ============ -->
 <section id="writing">
   <div class="wrap">
-    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 04 · Writing</span>
+    <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>Layer 04 · Writing</span>
     <h2 class="rise">Selected publications</h2>
 
     <div class="pubgroup rise">
@@ -490,7 +490,7 @@
 
     <div class="links morelink rise">
       <a class="chip" href="https://scholar.google.com/citations?user=PGhcI0AAAAAJ&hl=en">
-        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>
+        <svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>
         Full list on Google Scholar
       </a>
     </div>
@@ -501,7 +501,7 @@
 <section id="contact" class="contact">
   <div class="wrap">
     <div>
-      <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="23"/><line x1="1" y1="12" x2="23" y2="12"/></svg>Layer 05 · Contact</span>
+      <span class="eyebrow"><svg class="reg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4.2" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></svg>Layer 05 · Contact</span>
       <h2 class="rise">Get in touch</h2>
       <p class="lede rise">I'm always open to collaboration!</p>
     </div>
@@ -522,7 +522,7 @@
       <b>Static site built in HTML/CSS in collaboration with Claude.ai, hosted on GitHub Pages. Name set in Landsat imagery via "Your Name in Landsat." Type: Fraunces, Public Sans, IBM Plex Mono.</b>
     </p>
     <a class="totop" href="#top">
-      <svg class="reg" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="7" fill="none" stroke="var(--gold)" stroke-width="1.4"/><line x1="12" y1="1" x2="12" y2="23" stroke="var(--gold)" stroke-width="1.4"/><line x1="1" y1="12" x2="23" y2="12" stroke="var(--gold)" stroke-width="1.4"/></svg>
+      <svg class="reg" viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="9" fill="none" stroke="var(--gold)" stroke-width="1.4"/><ellipse cx="12" cy="12" rx="4.2" ry="9" fill="none" stroke="var(--gold)" stroke-width="1.4"/><line x1="3" y1="12" x2="21" y2="12" stroke="var(--gold)" stroke-width="1.4"/></svg>
       Back to top
     </a>
   </div>
