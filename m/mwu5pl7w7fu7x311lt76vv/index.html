@@ -3,11 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- The page is meant to be passed around by link rather than found. noindex
-     keeps it out of search results; no-referrer stops the tile requests from
-     handing the page's own URL to the tile hosts in the Referer header. -->
+<!-- The page is meant to be passed around by link rather than found, so noindex
+     keeps it out of search results.
+
+     The referrer policy has to be the browser default rather than no-referrer.
+     The OpenStreetMap tile usage policy requires a valid Referer header and
+     says in as many words not to set a restrictive Referrer-Policy; a page that
+     sends none is served the "access blocked" tile. strict-origin-when-cross-
+     origin sends only the origin to another host, so the tile servers see
+     https://ianpsheasmith.github.io/ and never the path this page sits at. -->
 <meta name="robots" content="noindex, nofollow, noarchive">
-<meta name="referrer" content="no-referrer">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Focal Sites and Host Records</title>
 <style>/* required styles */
 
