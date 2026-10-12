@@ -204,10 +204,33 @@
             }
             body {
                 padding: 0;
+                background: #fff;
+                line-height: 1.48;
             }
             .container {
                 box-shadow: none;
-                padding: 40px;
+                padding: 32px 40px;
+            }
+            h2 {
+                margin-top: 20px;
+                margin-bottom: 12px;
+                break-after: avoid-page;
+            }
+            h3,
+            .pub-subheading,
+            .entry-header,
+            .teaching-subsection-title {
+                break-after: avoid-page;
+            }
+            .entry,
+            .teaching-subsection,
+            ul {
+                break-inside: avoid-page;
+            }
+            .publication-item {
+                break-inside: avoid-page;
+                orphans: 3;
+                widows: 3;
             }
         }
         /* Responsive Design */
@@ -310,10 +333,28 @@
         }        
         /* Hide download button when printing/converting to PDF */
         @media print {
+          .download-section,
+          .back-link,
           .download-button,
           button,
           a[href*="pdf" i] {
             display: none !important;
+          }
+          .entry-header {
+            flex-direction: row;
+          }
+          .entry-date {
+            text-align: right;
+            margin-top: 0;
+          }
+          .interests-container {
+            flex-direction: row !important;
+            align-items: flex-start;
+            gap: 4%;
+          }
+          .interests-container .skills-column {
+            width: 48%;
+            margin-bottom: 0;
           }
         }
         .numbered-section {
@@ -370,6 +411,7 @@
         <div class="entry">
             <div class="entry-header">
                 <div class="entry-title">Ph.D., Medical Geography and Global Health</div>
+                <div class="entry-date">May 2026</div>
             </div>
             <div class="entry-institution">University of Florida, Gainesville, Florida</div>
             <div class="awards"><span class="awards-label">Awards:</span> Verena Lighthouse Scholar, Evan Coe Medical Geography Awards (Travel & Excellence), Distinguished Teaching Award, two oral presentation awards & one poster presentation award</div>
@@ -378,6 +420,7 @@
         <div class="entry">
             <div class="entry-header">
                 <div class="entry-title">MPH, Global Health Epidemiology</div>
+                <div class="entry-date">May 2023</div>
             </div>
             <div class="entry-institution">University of Michigan, Ann Arbor, Michigan</div>
             <div class="awards"><span class="awards-label">Awards:</span> Latin American and Caribbean Studies Tinker Fellow, Global Public Health Research Award Recipient, Outstanding Commitment to Public Health Practice</div>
@@ -386,6 +429,7 @@
         <div class="entry">
             <div class="entry-header">
                 <div class="entry-title">BSc, International Health | Minors in Biology & Spanish</div>
+                <div class="entry-date">December 2020</div>
             </div>
             <div class="entry-institution">Bethel University, Mishawaka, Indiana</div>
             <div class="awards"><span class="awards-label">Awards:</span> Scholar Athlete in Track & Field, Outstanding Major in International Health</div>
@@ -695,14 +739,27 @@
         </div>
         <!-- Scientific Publications -->
         <h2>SCIENTIFIC PUBLICATIONS</h2>
-        <h3 class="pub-subheading">Published & Accepted</h3>
+        <h3 class="pub-subheading">Accepted & Published</h3>
         <div class="numbered-section">
             <div class="publication-item">
-                Bashshur R, Werner E, <strong>Pshea-Smith IA</strong>, Dunn M. Prevalence and geographic distribution of keratitis in the United States and associated factors.
-                <span class="publication-status">Accepted, Next Research, April, 2026</span>
+                <strong>Pshea-Smith IA</strong>, Ponce P, Cevallos V, Carrazco A, Morrison AC, Coloma J, Eisenberg JNS. Landing patterns of <i>Aedes aegypti</i> & <i>Culex quinquefasciatus</i> in northern Esmeraldas province, Ecuador: Human Landing Catch Study June 2021 - July 2022.
+                <span class="publication-status">Accepted, Journal of the American Mosquito Control Association; in proof</span>
+                <a href="https://doi.org/10.1101/2025.03.12.25323448" target="_blank">Preprint: https://doi.org/10.1101/2025.03.12.25323448</a>
             </div>
             <div class="publication-item">
-                <strong>Pshea-Smith IA</strong>, Bissainte D, Ash KD. Characterising climate change, colonisation, conflict & corruption as a vulnerabilising assemblage in the context of infectious disease in Haiti. <i>Geoforum</i>. 2026;174:104683.
+                Bashshur R, Werner E, <strong>Pshea-Smith IA</strong>, Dunn M. Prevalence and geographic distribution of keratitis in the United States and associated factors.
+                <span class="publication-status">Accepted, Next Research, April 2026</span>
+            </div>
+            <div class="publication-item">
+                <strong>Pshea-Smith IA</strong>, Okech BA, Boncy J, Existe A, So J, Hamilton T, Blanton J, Matulis GA, Metrailer MC, Cleary NG, Dunford JC, Koehler JW, Blackburn JK, von Fricken ME. Vegetation, temperature, and human population density influence mosquito biodiversity in Haiti. <i>Parasites & Vectors</i>. 2026 Oct 9.
+                <a href="https://doi.org/10.1186/s13071-026-07724-3" target="_blank">https://doi.org/10.1186/s13071-026-07724-3</a>
+            </div>
+            <div class="publication-item">
+                Matulis GA, Smith HP, Katich RS, Kour N, Delp KL, Douglas CE, <strong>Pshea-Smith IA</strong>, Lilak AA, Okech B, Existe A, Sutherland I. Short report: surveillance of <i>hrp2/hrp3</i> deletions in <i>Plasmodium falciparum</i> within Haiti, 2021-2023, using RDTs. <i>Malaria Journal</i>. 2026 Aug 28;25:313.
+                <a href="https://doi.org/10.1186/s12936-026-06108-3" target="_blank">https://doi.org/10.1186/s12936-026-06108-3</a>
+            </div>
+            <div class="publication-item">
+                <strong>Pshea-Smith IA</strong>, Bissainte D, Ash KD. Characterising climate change, colonisation, conflict & corruption as a vulnerabilising assemblage in the context of infectious disease in Haiti. <i>Geoforum</i>. 2026 Aug;174:104683.
                 <a href="https://doi.org/10.1016/j.geoforum.2026.104683" target="_blank">https://doi.org/10.1016/j.geoforum.2026.104683</a>
             </div>
             <div class="publication-item">
@@ -710,11 +767,11 @@
                 <a href="https://doi.org/10.4269/ajtmh.25-0324" target="_blank">https://doi.org/10.4269/ajtmh.25-0324</a>
             </div>
             <div class="publication-item">
-                Matulis GA, Smith HP, Hall G, Katich RS, Delp KL, Douglas CE, Williams J, Hirsch S, Kumar R, <strong>Pshea-Smith IA</strong>, Lilak AA, Okech BA, Ricks K, Stefan CP, Existe A, Kugelman JR, Sutherland I, Dunford J, Boncy J, von Fricken ME, Koehler JW. Characterization of arbovirus infections in patients within Haiti by screening discarded malaria rapid diagnostic test cassettes. PLOS Neglected Tropical Diseases. 2026 Mar;20:1-13.
+                Matulis GA, Smith HP, Hall G, Katich RS, Delp KL, Douglas CE, Williams J, Hirsch S, Kumar R, <strong>Pshea-Smith IA</strong>, Lilak AA, Okech BA, Ricks K, Stefan CP, Existe A, Kugelman JR, Sutherland I, Dunford J, Boncy J, von Fricken ME, Koehler JW. Characterization of arbovirus infections in patients within Haiti by screening discarded malaria rapid diagnostic test cassettes. <i>PLOS Neglected Tropical Diseases</i>. 2026 Mar 20;20(3):e0014089.
                 <a href="https://doi.org/10.1371/journal.pntd.0014089" target="_blank">https://doi.org/10.1371/journal.pntd.0014089</a>
             </div>
             <div class="publication-item">
-                Motes J, Wilson B, <strong>Pshea-Smith IA</strong>, Matulis GA, Bird JT, So J, Boncy J, Sutherland IW, Hamilton T, Dunford J, Scime S, Tarigopula N, Minard-Smith A, Existe A, Koehler JW, Okech BA, von Fricken ME, Blanton J. Molecular detection of insecticide resistance markers in <i>Aedes aegypti</i> (Diptera: Culicidae) populations from Haiti. Journal of Medical Entomology. 2026 Jan;63(1):tjaf195.
+                Motes J, Wilson B, <strong>Pshea-Smith IA</strong>, Matulis GA, Bird JT, So J, Boncy J, Sutherland IW, Hamilton T, Dunford J, Scime S, Tarigopula N, Minard-Smith A, Existe A, Koehler JW, Okech BA, von Fricken ME, Blanton J. Molecular detection of insecticide resistance markers in <i>Aedes aegypti</i> (Diptera: Culicidae) populations from Haiti. <i>Journal of Medical Entomology</i>. 2026 Feb 6;63(1):tjaf195.
                 <a href="https://doi.org/10.1093/jme/tjaf195" target="_blank">https://doi.org/10.1093/jme/tjaf195</a>
             </div>
             <div class="publication-item">
@@ -726,39 +783,18 @@
         <h3 class="pub-subheading">Under Review</h3>
         <div class="numbered-section">
             <div class="publication-item">
-                <strong>Pshea-Smith IA</strong>, Matulis GA, Metrailer MC, Okech B, So J, Boncy J, Sutherland I, Hamilton T, Dunford J, Blanton J, Existe A, Koehler JW, Blackburn JK, von Fricken ME. Mosquito community ecology in a pathogen endemic setting in Haiti.
-                <span class="publication-status">Under review, Parasites & Vectors</span>
-            </div>
-            <div class="publication-item">
                 <strong>Pshea-Smith IA</strong>, Okech B, Sutherland I, Dunford J, So J, Boncy J, Existe A, Punch B, Matulis GA, Koehler JW, Blackburn JK, von Fricken ME. The increasing suitability of <i>Aedes aegypti</i> in Haiti under climate change is an issue of global health equity.
                 <span class="publication-status">Under review, Journal of Climate Change & Health</span>
             </div>
             <div class="publication-item">
-                <strong>Pshea-Smith IA</strong>, Ponce P, Cevallos V, Carrazco A, Morrison AC, Coloma J, Eisenberg JNS. Landing patterns of <i>Aedes aegypti</i> & <i>Culex quinquefasciatus</i> in northern Esmeraldas province, Ecuador: Human Landing Catch Study June 2021 - July 2022.
-                <span class="publication-status">Under review, Journal of the American Mosquito Control Association</span>
-                <a href="https://doi.org/10.1101/2025.03.12.25323448" target="_blank">https://doi.org/10.1101/2025.03.12.25323448 </a>
-            </div>
-            <div class="publication-item">
                 <strong>Pshea-Smith IA</strong>, Kotorashvili A, Kotaria N, Golubiani G, Kirkitadze G, Chunashvili T, Shubashishvili A, Di Paola N, Kugelman J, Hulseberg C, Walker B, Musich T, Cleary N, Metrailer MC, Blanton J, Lynn J, Reinbold-Wasson D, Denlinger DS, Blackburn JK, von Fricken ME. An ecological analysis of ticks in the country of Georgia.
-                <span class="publication-status">Under review, Ticks and Tick-borne Diseases</span>
+                <span class="publication-status">Under review, Ecosphere</span>
                 <a href="https://doi.org/10.2139/ssrn.6551591" target="_blank">https://doi.org/10.2139/ssrn.6551591</a>
             </div>
             <div class="publication-item">
                 Cleary N, Fiorenzano J, Boldbaatar B, <strong>Pshea-Smith IA</strong>, Altantogtokh D, Lindroth EJ, Davidson S, Poole-Smith BK, Hertz J, Amgalanbayar B, Etobayeva I, Salyer AR, Letizia AG, Ryan SJ, von Fricken ME. Modeling the distributions of <i>Dermacentor nuttalli</i>, <i>Ixodes persulcatus</i>, and <i>Hyalomma asiaticum</i> in Mongolia from 2019-2024.
                 <span class="publication-status">Under review, Ticks and Tick-borne Diseases</span>
                 <a href="https://doi.org/10.2139/ssrn.6327699" target="_blank">https://doi.org/10.2139/ssrn.6327699</a>
-            </div>
-            <div class="publication-item">
-                Matulis GA, Smith HP, So J, Hamilton T, Katich RS, Kour N, Delp KL, Douglas CE, <strong>Pshea-Smith IA</strong>, Lilak AA, Okech B, Blanton J, Existe A, Sutherland I, Stefan CP, Ricks K, Dunford J, Boncy J, Koehler JW, von Fricken ME. Surveillance of <i>Pfhrp2/Pfhrp3</i> deletions in <i>Plasmodium falciparum</i> within Haiti, 2021-2023, using RDTs.
-                <span class="publication-status">Under review, Malaria Journal</span>
-            </div>
-        </div>
-        
-        <h3 class="pub-subheading">In Preparation</h3>
-        <div class="numbered-section">
-            <div class="publication-item">
-                <strong>Pshea-Smith IA</strong>, Ash KD, Bashshur R. The Geography of Keratitis in Florida and its Correlation with Social Vulnerability.
-                <span class="publication-status">In preparation</span>
             </div>
         </div>
         <!-- Professional Reports -->
@@ -819,11 +855,11 @@
                     <li>Cultural competency & sensitivity</li>
                     <li>Pedagogy in interdisciplinary fields, lesson plan development and discussion facilitation</li>
                     <li>Professional Spanish proficiency; beginner French proficiency</li>
-                    <li>Budgeting and project management</li>
+                    <li>Grant/proposal writing and project management</li>
                 </ul>
             </div>
         </div>
-        <div class="skills-container">
+        <div class="skills-container interests-container">
             <div class="skills-column">
                 <h2>INTERESTS</h2>
                 <h3>Academic</h3>
